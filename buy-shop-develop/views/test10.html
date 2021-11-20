@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>滚动事件</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+		<style>
+			div{
+				/* height:100px; */
+				
+			}
+			button{
+				position:fixed;
+				bottom: 100px;
+				right: 100px;
+			}
+			.lll{
+				display:block;
+				color: #000000;
+			}
+			.l22{
+				color: #ff0000;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div style="background:buttonface; width:180px; height:10px; text-align:center; text-valign:middle">
+			<nobr>
+			本報導由<font onmouseout="this.style.color = '000000';" onmouseover="this.style.color = 'ff0000';" style="color:#0000ff">網頁研習室</font>製作
+			</nobr>
+		</div> -->
+		<!--  -->
+		<!-- <div class="header_div">
+			<a href="/cart.html">
+				<i class="fas fa-shopping-cart"></i>
+				<div class=""
+				onmouseout="this.className = 'lll';"
+				onmouseover="this.className = 'l22';">
+				Cart
+				</div>
+			</a>
+		</div> -->
+		<div>
+			<br
+		</div>
+		<div onmouseover="document.getElementById('center').style.visibility = 'visible'"> 
+			<i class="fas fa-shopping-cart"></i>
+			<div id="center" onmouseout="this.style.visibility = 'hidden'"> 
+				cart
+			</div> 
+		</div> 
+
+	<!--  -->
+	</body>
+</html>

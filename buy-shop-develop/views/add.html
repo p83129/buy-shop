@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1.0" />
+  <title>Buy-Shop</title>
+  <link rel="stylesheet" type="text/css" href="css/add.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@800&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+  <!-- 標題 -->
+  <header>
+    <div class="title_background">
+      <div class="title_div">
+        <img class="img_logo" src="image/home.png">
+        <!-- <span class="home">首頁 > 我的商品 > 新增商品</span> -->
+        <div class="home">
+          <span id="home" onclick="home()">首頁</span>
+          >
+          <a href="/modify.html">我的商品</a>
+          >
+          <span>新增商品</span>
+        </div>
+      </div>
+      <!-- 賣家登出 -->
+      <div class="header_div">
+        <a id="a_change" onclick="signdelete()" 
+          onmouseover=Text1(this) 
+          onmouseout=Text_Image(this)>
+          <i class="far fa-user"></i>
+        </a>
+      </div>
+  </header>
+  <!-- 目錄 -->
+  <div class="list">
+    <ul class="list_ul">
+      <li>
+        <a href="#add_product">新增商品</a>
+      </li>
+      <li>
+        <a href="#info">基本資訊</a>
+      </li>
+      <li>
+        <a href="#sell">銷售資訊</a>
+      </li>
+    </ul>
+  </div>
+  <!-- 新增商品 -->
+  <div class="add_product_background">
+    <div id='add_product_1'>
+      <h2 class="add_title">
+        新增商品
+      </h2>
+    </div>
+    <label for="" class="product_name">商品名稱:</label>
+    <input type="text" placeholder="請輸入" class="input_style" id="product_name"></input>
+    <!-- 分類商品 -->
+    <div class="product_sort">
+      <div class=sort_position>
+        <span>-分類種類-</span>
+      </div>
+      <div class="sort_background">
+        <div style="padding: 10px;">
+          <form name="myForm">
+            <div class="div_w_h">
+              <select id="choose" name="choose" class="select_w_h border_style" size=5
+                onChange="renew(this.selectedIndex);">
+                <option value="國家選擇">國家選擇
+                <option value="素食選擇">素食選擇
+              </select>
+            </div>
+            <div class="line"></div>
+            <div class="div_w_h div_w_h_margin">
+              <select id="root" class="select_w_h border_style" name="choose_one" size=5 onChange="renew1();">
+                <option value="">請由左方選取系別
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div style="margin: 15px;">
+        <span>目前選擇的：</span>
+        <div id="choose_1" class="choose_1 choose_color"></div>
+        <div id="dot" class="choose_1 choose_color dot"></div>
+        <div id="choose_2" class="choose_2 choose_color"></div>
+      </div>
+    </div>
+    <!-- 基本資訊 -->
+    <div>
+      <h2 class="h2_info" id="info_1">基本資訊</h2>
+      <div style="margin: 50px 0px;">
+        <div class="photo">
+          <span>商品圖片</span>
+        </div>
+        <div class="img_background">
+          <label id='A'>
+            <input type="file" id="upload_input" name="file" onchange="onloadImg(this)" class="upload_input"
+              multiple="multiple">
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+              </div>
+            </div>
+          </label>
+          <div id='aa' style='display: none;'>
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+                <div class="img_style">
+                  <div class="img_style_block" id="img_style_block" style="display:none;">
+                    <img class="img_style_show" id="showing" src="" style="display:none;" />
+                    <div class="DeleteBox" onMouseOver="this.className='DeleteBox DeleteBox_before';"
+                      onmouseout="this.className='DeleteBox';" onclick="deletebox()">
+                      <span>X</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="picture_w_h">
+            <div class="picture_div"><span>*封面照片</span></div>
+          </div>
+          <label id='B'>
+            <input type="file" id="upload_input1" name="file" onchange="onloadImg1(this)" class="upload_input"
+              multiple="multiple">
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+              </div>
+            </div>
+          </label>
+          <div id='bb' style='display: none;'>
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+                <div class="img_style">
+                  <div class="img_style_block" id="img_style_block1" style="display:none;">
+                    <img class="img_style_show" id="showing1" src="" style="display:none;" />
+                    <div class="DeleteBox" onMouseOver="this.className='DeleteBox DeleteBox_before';"
+                      onmouseout="this.className='DeleteBox';" onclick="deletebox1()">
+                      <span>X</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="picture_w_h">
+            <div class="picture_div"><span>圖片1</span></div>
+          </div>
+          <label id='C'>
+            <input type="file" id="upload_input2" name="file" onchange="onloadImg2(this)" class="upload_input">
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+              </div>
+            </div>
+          </label>
+          <div id='cc' style='display: none;'>
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+                <div class="img_style">
+                  <div class="img_style_block" id="img_style_block2" style="display:none;">
+                    <img class="img_style_show" id="showing2" src="" style="display:none;" />
+                    <div class="DeleteBox" onMouseOver="this.className='DeleteBox DeleteBox_before';"
+                      onmouseout="this.className='DeleteBox';" onclick="deletebox2()">
+                      <span>X</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="picture_w_h">
+            <div class="picture_div"><span>圖片2</span></div>
+          </div>
+          <label id='D'>
+            <input type="file" id="upload_input3" name="file" onchange="onloadImg3(this)" class="upload_input">
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+              </div>
+            </div>
+          </label>
+          <div id='dd' style='display: none;'>
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+                <div class="img_style">
+                  <div class="img_style_block" id="img_style_block3" style="display:none;">
+                    <img class="img_style_show" id="showing3" src="" style="display:none;" />
+                    <div class="DeleteBox" onMouseOver="this.className='DeleteBox DeleteBox_before';"
+                      onmouseout="this.className='DeleteBox';" onclick="deletebox3()">
+                      <span>X</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="picture_w_h">
+            <div class="picture_div"><span>圖片3</span></div>
+          </div>
+          <label id='E'>
+            <input type="file" id="upload_input4" name="file" onchange="onloadImg4(this)" class="upload_input">
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+              </div>
+            </div>
+          </label>
+          <div id='ee' style='display: none;'>
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+                <div class="img_style">
+                  <div class="img_style_block" id="img_style_block4" style="display:none;">
+                    <img class="img_style_show" id="showing4" src="" style="display:none;" />
+                    <div class="DeleteBox" onMouseOver="this.className='DeleteBox DeleteBox_before';"
+                      onmouseout="this.className='DeleteBox';" onclick="deletebox4()">
+                      <span>X</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="picture_w_h">
+            <div class="picture_div"><span>圖片4</span></div>
+          </div>
+          <label id='F'>
+            <input type="file" id="upload_input5" name="file" onchange="onloadImg5(this)" class="upload_input">
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+              </div>
+            </div>
+          </label>
+          <div id='ff' style='display: none;'>
+            <div class="img_w_h">
+              <div class="img_circle">
+                <div class="img_txt">
+                  <span>十</span>
+                </div>
+                <div class="img_style">
+                  <div class="img_style_block" id="img_style_block5" style="display:none;">
+                    <img class="img_style_show" id="showing5" src="" style="display:none;" />
+                    <div class="DeleteBox" onMouseOver="this.className='DeleteBox DeleteBox_before';"
+                      onmouseout="this.className='DeleteBox';" onclick="deletebox5()">
+                      <span>X</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="picture_w_h">
+            <div class="picture_div"><span>圖片5</span></div>
+          </div>
+        </div>
+        <!-- 商品描述 -->
+        <div class="product_description">
+          <div style="margin: 70px 0px;">
+            <span>*商品描述</span>
+            <div style="margin: -17px 0px 10px 90px;">
+              <textarea type="textarea" required id="text_amount" class="product_input"
+                onkeyup="sizecontrol()"></textarea>
+              <div class="count_style"><span id="count">0/3000</span></div>
+            </div>
+          </div>
+        </div>
+        <!-- 成分 -->
+        <div class="select_background">
+          <div class="brand">
+            <span>口味</span>
+            <input type="text" class="input_text" id="contents"></input>
+            <div class="taste_div">
+              <span class="taste_span">* 請用、來區別口味類型</span>
+            </div>
+          </div>
+          <!-- 重量 -->
+          <div class="brand">
+            <span>重量</span>
+            <input type="text" class="input_text" placeholder="g" id="weight"></input>
+          </div>
+          <!-- 產地 -->
+          <div class="brand">
+            <span>產地</span>
+            <input type="text" class="input_text" id="area"></input>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 銷售資訊 -->
+  <div class="sell_product_background">
+    <h2 class="h2_info" id="sell_1">銷售資訊</h2>
+    <div class="brand" style="margin: 20px 0px 0px 122px;">
+      <span>*價格</span>
+      <input type="text" class="input_text input_padding" placeholder="請輸入" id="price"></input>
+      <div class="price_style">
+        <span>NT$</span>
+        <span style="color: #dfdfdf;">|</span>
+      </div>
+    </div>
+    <div class="brand" style="margin: 20px 0px 0px 90px;">
+      <span>*商品數量</span>
+      <input type="text" class="input_text" value="1" id="num"></input>
+    </div>
+  </div>
+  <!-- 商品按鈕設定 -->
+  <div class="set_btn_background">
+    <div class="set_btn_w_h">
+      <div class="cancel_btn">
+        <button class="cancel_btn_style">取消</button>
+      </div>
+      <div class="cancel_btn">
+        <button class="cancel_btn_style" onclick="addproduct(2)">儲存並下架</button>
+      </div>
+      <div class="cancel_btn">
+        <button class="cancel_btn_style save_btn" onclick="addproduct(1)">儲存並上架</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/add.js"></script>
+
+</html>

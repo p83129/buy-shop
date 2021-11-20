@@ -1,0 +1,182 @@
+/* 大小切換 */
+#check:checked ~ .member_background{
+    margin-left: 350px;
+    transition: .5s;
+}
+
+/* 遮蔽視窗 */
+.hidebg{
+    position:absolute;
+    left:0px;
+    top:0px;
+    background-color:#000;
+    width:100%;  /*寬度100%，這樣才能使隱藏背景層覆蓋元頁面*/
+    filter:alpha(opacity=60);  /*透明度為60%*/
+    opacity:0.4;  /*非IE瀏覽器下設置透明度為60%*/
+    display:none;
+    z-index: 3;
+    height: 100%;
+}
+
+/* 登入 */
+.member_background{
+    margin: 80px 0;
+    transition: .5s;
+}
+.center{
+    width: 500px;
+    margin: 0px auto;
+    padding: 50px 0px;
+}
+.logo_title_bg{
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo_title{
+    max-width: 225px;
+    width: 100%;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.pointer{
+    cursor: pointer;
+}
+.a_style{
+    font-size: 18px;
+    text-align: center;
+    color: #595656;
+    width: calc(100% / 2);
+    display: block;
+}
+.b_style{
+    color: #fa8072;
+}
+.text_weight{
+    font-weight: 800;
+}
+.a_border_right{
+    border-right: 1px solid #595757;
+}
+.member_input{
+    border: 0;
+    border-bottom: 1px solid #595757;
+    padding: 0 10px;
+    outline: none;
+    width: 95%;
+}
+.margin_div{
+    margin: 0 0 15px;
+}
+.margin_div input{
+    margin-top: 10px;
+}
+.margin_div_right{
+    width: 80px;
+    float: right;
+    margin-right: 30px;
+}
+.error{
+    color: red;
+    width: 100%;
+    font-size: 12px;
+    display: none;
+}
+.txt-a{
+    color: #fa8072;
+    font-weight: bold;
+}
+.txt-b{
+    color: #436f9b;
+    font-weight: bold;
+}
+.singin_div{
+    width: 100%;
+    margin-top: 75px;
+    text-align: center;
+}
+
+.btn_signin{
+    width: 20%;
+    background: #fff;
+    color: #fa8072;
+    font-size: 14px;
+    line-height: 40px;
+    border-radius: 5px;
+    border: 2px solid #fa8072;
+    font-weight: bold;
+}
+
+/* 忘記密碼 */
+.forget_pas_div{
+    width: 500px;
+    position: absolute;
+    z-index: 3;
+    border: 1px solid;
+    padding: 15px;
+    margin: 255px 500px;
+    background: #fff;
+    display: none;
+}
+.h2_style{
+    text-align: center;
+    color: #fa8072;
+    font-size: 20px;
+    font-weight: bold;
+}
+.forget_pas_div_1 {
+    margin-top: 30px;
+    text-align: center;
+    padding: 0px 60px;
+}
+.btn_forget_pas{
+    width: 20%;
+    margin: 0px 10px;
+}
+
+/* 賣家登入 */
+.seller_singin{
+    width: 500px;
+    position: absolute;
+    z-index: 3;
+    border: 1px solid;
+    padding: 15px;
+    margin: 255px 500px;
+    background: #fff;
+    display: none;
+}
+.seller_singin h2{
+    text-align: center;
+    color: #436f9b;
+    font-size: 20px;
+    font-weight: bold;
+}
+.seller_btn{
+    width: 30%;
+    background: #fff;
+    color: #436f9b;
+    font-size: 14px;
+    line-height: 40px;
+    border-radius: 5px;
+    border: 2px solid #436f9b;
+    font-weight: bold;
+}
+
+/* 屬性 */
+.margin_div input:focus{
+    border-bottom: 1px solid #fa8072;
+}
+button:hover { 
+    opacity: 0.5; /* 按鈕透明 */
+    cursor: pointer;
+}
+div:focus{
+    color: red;
+}
+
+/*  */
+.SlideDown {
+    height: 300px;
+  }

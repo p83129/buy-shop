@@ -1,0 +1,8 @@
+create table Favorites (
+id bigint unsigned not null auto_increment primary key,
+email varchar(255) not null,
+pno varchar(255) not null,
+amount varchar(255) not null,
+type varchar(255) not null,
+updatetime datetime not null default current_timestamp
+);

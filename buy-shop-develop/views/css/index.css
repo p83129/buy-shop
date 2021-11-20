@@ -1,0 +1,102 @@
+/* 大小切換 */
+#check:checked ~ .slides_div{  
+    margin-left: 350px;
+}
+#check:checked ~ .slides_div img{
+    max-width: 1170px;
+}
+
+/* 圖片輪播 */
+.slides_div{
+    margin-top: 20px;
+    margin-left: 0;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s ease;
+    z-index: -1;
+}
+.slides_div img{
+    /* width: 100%; */
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 圖片與Radio_Btn */
+.lunbobtn {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+.lbbtn {
+    margin-left: 10px;
+    display: inline-block;
+    background-color: gray;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+}
+/* .lbbtn:hover {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+} */
+ul.slides{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    list-style: none;
+    overflow: hidden;
+}
+li.slide{
+    margin: 0;
+    padding: 0;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1s ease;
+}
+
+/* 依國家挑選 */
+.country{
+    position: relative;
+    transition: 0.5s;
+    /* margin-left: 350px; */
+    margin-top: 50px;
+    margin-left: 0px;
+}
+.center{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.center .a_style{
+    text-decoration: none;
+}
+.txt_color{
+    color: #696969;
+}
+.country_img{
+    width: 280px;
+    height: 260px;
+    padding: 5px;
+}
+.country_img:hover,
+.lbbtn:hover{
+    transition: .5s ;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+
+
+
+/* 屬性 */
+.sing:hover { 
+    opacity: 0.5; 
+}
+.active_btn:hover{
+    opacity: 0.5;
+}

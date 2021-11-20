@@ -1,0 +1,89 @@
+/* 大小切換 */
+#check:checked ~ .center{
+    margin-left: 400px;
+    transition: .5s;
+}
+
+
+/* 購買步驟 */
+.step_panel{
+    height: 52px;
+    margin-bottom: 30px;
+}
+.step_panel li{
+    list-style: none;
+    float: left;
+    position: relative;
+    width: 33.33%;
+    height: 52px;
+    text-align: center;
+    background-color: #dfdfdf;
+    box-shadow: -5px 0 #fff inset;
+}
+.step_panel li.action{
+    color: #fff;
+    background-color: #696969;
+}
+#page_cart .step_panel_step1:before,
+#page_cart .step_panel_step2:before{
+    content: '';
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    right: 5px;
+    top: 0;
+    background-color: #fff;
+    border-width: 26px 0 26px 30px;
+    border-style: solid;
+    border-color: #fff transparent #fff #dfdfdf;
+    /* border-color: #fff transparent #fff #696969; */
+}
+#page_cart .step_panel_step1.action:before,
+#page_cart .step_panel_step2.action:before,
+#page_cart .step_panel_step3.action:before{
+    border-color: #fff transparent #fff #696969;
+}
+#page_cart .step_panel span.action{
+    color: #fff;
+}
+#page_cart .step_panel .step_panel_num{
+    font-size: 22px;
+    margin: 0 24px 0 -24px;
+    position: relative;
+    top: 2px;
+}
+#page_cart .step_panel .step_panel_item{
+    line-height: 52px;
+    letter-spacing: .08em;
+}
+
+
+/* 購買完成 */
+.center{
+    width: 70%;
+    margin: 50px 225px;
+}
+.finish_order_div{
+    border: 1px solid #696969;
+    width: 200px;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    margin: 100px 420px;
+}
+.finish_order_div .finish{
+    color: #fa8072;
+}
+.finish_order_div p{
+    margin-bottom: 10px;
+}
+.finish_order_div a{
+    color: #696969;
+    font-weight: bold;
+    text-decoration: none;
+}
+.finish_order_div a:hover{
+    color: black;
+    text-decoration: underline;
+}

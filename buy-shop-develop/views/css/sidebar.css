@@ -1,0 +1,419 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins",sans-serif;
+}
+.side_bar{
+  background: #dfdfdf;
+  width: 350px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  /* left: 0; */
+  left: -100%;
+  overflow-y: auto;
+  transition: .5s ease;
+  z-index: 2;
+}
+.side_bar.active{
+  /* left: -100%; */
+  left: 0;
+}
+.logo h1{
+  text-align: center;
+  line-height: 100px;
+  margin: 30px 80px;
+  color: #fa8072;
+  font-size: 50px;
+  font-family: 'Baloo Chettan 2', cursive;
+  cursor: pointer;
+}
+.slides_div h1{
+  margin: 0 700px;
+  top: 10px;
+  position: fixed;
+  color: #fa8072;
+  font-family: 'Baloo Chettan 2', cursive;
+  opacity: 1;
+  z-index: 1;
+  transition: .5s ease;
+}
+/* Search */
+.search_div input{
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.search_div input[type="text"]{
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  border-radius: 25px 0 0 25px;
+}
+button[type="button"]{
+  position: relative;
+  width: 60px;
+  height: 40px;
+  left: -5px;
+  top: 9px;
+  border-radius: 0 25px 25px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #ffc107;
+  color: #fff;
+}
+button[type="button"]:hover{
+  background: #dba606;
+  transition: .5s;
+}
+.search_img{
+  width: 30px;
+}
+.side_bar .menu{
+  width: 100%;
+}
+.search_div {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 5px 30px;
+  line-height: 60px;
+  text-align: center;
+}
+.side_bar .menu .item{
+  position: relative;
+  cursor: pointer;
+}
+.side_bar .menu .item a{
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  padding: 5px 30px;
+  line-height: 60px;
+}
+.side_bar .menu .item a:hover{
+  background: #fff;
+  transition: 0.3s ease;
+}
+.side_bar .menu .item i{
+  margin-right: 15px;
+}
+.side_bar .menu .item a .down_btn{
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  transition: .3s ease;
+}
+.down_btn.rotate{
+  transform: rotate(180deg);
+  transition: .3s ease;
+}
+.side_bar .menu .item .sub_menu a{
+  margin-left: 50px;
+}
+.side_bar .menu .sub_menu a:hover{
+  color: #fa8072;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+.side_bar .menu .sub_menu {
+  background: #fff;
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: height 0.6s;
+  -moz-transition: height 0.6s;
+  -o-transition: height 0.6s;
+  transition: height 0.6s;
+}
+:root .sub_menu .wrap{
+  position: absolute;
+  bottom: 0;
+}
+.close_btn{
+  position: absolute;
+  font-size: 20px;
+  right: 0;
+  margin: 25px;
+  display: block;
+}
+.close_btn:hover{
+  color: #fa8072;
+}
+.menu_btn{
+  position: fixed;
+  font-size: 30px;
+  top: 15px;
+  left: 70px;
+  color: black;
+  z-index: 2;
+}
+.pointer{
+  cursor: pointer;
+}
+/* 左右晃動動畫 */
+.animated {
+animation-duration: 1s; /*動畫時間*/
+}
+.animated {
+animation-iteration-count: infinite; /*動作迴圈的次數：infinite 無限迴圈*/
+}
+.menu_btn:hover{
+  animation-name:aroundAnimation; /*動畫的名稱*/
+  transform-origin: center bottom; /*設定動畫旋轉元素的基點為*/
+  cursor: pointer;
+  color: #fa8072;
+}
+@keyframes aroundAnimation{
+  0%,100%,20%,50%,80% {
+  transform: rotate(0deg);
+  }
+  40%,43%{
+  transform: rotate(-10deg);
+  }
+  70%{
+  transform: rotate(10deg);
+  }
+  90%{
+  transform: rotate(-10deg);
+  }
+}
+
+/* logo */
+.logo_div{
+  position: fixed;
+  color: #fa8072;
+  margin: 10px 695px;
+  font-family: 'Baloo Chettan 2', cursive;
+  z-index: 2;
+  opacity: 1;
+  transition: .5s ease;
+  cursor: pointer;
+}
+
+/* 收藏、會員、購物車 */
+/* 標題動畫 */
+header{     
+  height: 60px;
+}
+#header{
+  position: fixed;
+  background-color: rgba(0,0,0,0.2);
+  width: 100%;
+  height: 60px;
+  transition: 5s;
+  z-index: 1;
+  display: none;
+}
+.header_menu{
+  position: fixed;
+  z-index: 2;
+}
+.header_menu .header_div:hover,
+.header_menu .button1 .header_div:hover,
+.header_menu .button2 .header_div:hover{
+  cursor: pointer;
+}
+.header_menu a{
+  color: black;
+}
+.header_div{
+  position: fixed;
+  float: right;
+  right: 180px;
+  font-size: 20px;
+  margin: 25px 0;
+}
+.header_div:hover{
+  opacity: 0.5;
+}
+.header_div a{
+  text-decoration: none;
+}
+.button1 .header_div{
+  right: 140px;
+}
+.button2 .header_div{
+  right: 85px;
+}
+.img_div{
+  width: 15%;
+  position: fixed;
+  top: 45px;
+  right: 120px;
+}
+.button2 .img_div{
+  right: 80px;
+}
+.button1:hover .hover,
+.button1:hover .text_hover{
+  display:block;
+}
+.button2:hover .hover,
+.button2:hover .text_hover{
+  display: block;
+}
+.text_hover{
+  display: none;
+  /* padding: 5px; */
+  margin-top: 20px;
+}
+.hover{
+  display: none;
+  padding: 5px;
+  margin: 20px;
+  border-style: solid;
+  border-width: thin;
+  background-color: #fff;
+}
+.list_style{
+  list-style: none;
+}
+.list_style2{
+  text-align: right;
+  padding: 6px;
+  font-size: 15px;
+}
+
+/* 登入/註冊 */
+.sing{
+  width: 95%;
+  margin: 5px;
+  background-color: #696969;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.out{
+  width: 95%;
+  margin: 5px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #778899;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #778899;
+  font-size: 15px;
+  line-height: 30px;
+  cursor: pointer;
+}
+.out_after1{
+  width: 95%;
+  margin: 5px;
+  text-align: center;
+  background-color: #778899;
+  color:#ffffff;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #778899;
+  font-size: 15px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+/* 購物車數量顯示 */
+/* 購物車數量 */
+/* .header{background:rgb(0, 178, 255);color:#fff;} */
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+}
+.badge {
+  /* padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px; */
+  border-radius: 9px;
+}
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+.text_cart{
+  position: absolute;
+  top: -30px;
+  left: 190px;
+  font-size: 14px;
+}
+
+/* 圖片大小切換 */
+#check:checked ~ .logo_div{
+  opacity: 0;
+}
+#check:checked ~ .menu_btn{
+  opacity: 0;
+}
+#check:checked ~ .country{
+  margin-left: 350px;
+}
+#check:checked ~ .botminfo_div{
+  margin-left:600px;
+}
+#check{
+  display: none;
+}
+
+/* scroll back to top */
+#top_btn{
+  position: fixed;
+  top: 600px;
+  left: 1400px;
+  z-index: 1;
+  opacity: 0;
+  transition: 1s ;
+}
+#top_btn a{
+  font-size: 50px;
+  color: gray;
+  opacity: 0.8;
+}
+#top_btn a:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* 底下資訊欄 */
+.hr_color{
+  width: 100%;
+  height: 1px;
+  background-color: #696969;
+}
+.botminfo_div{
+  /* margin-left:600px; */
+  margin-left: 450px;
+  transition: 0.5s;
+}
+.table-style{
+  color: #696969;
+ 
+  line-height: 30px;    
+}
+.tr{
+  padding: 30px 180px 10px 0px;
+  font-size: 25px;
+}
+.company_txt{
+  margin: 20px 0px;
+  text-align: center;
+  color: #696969;
+}
+
+
+/* 屬性 */
+.sing:hover { 
+  opacity: 0.5; 
+}
+.active_btn:hover{
+  opacity: 0.5;
+}

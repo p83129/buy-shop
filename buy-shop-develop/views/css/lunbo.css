@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+   }
+   
+   /*
+    * 設置outer的樣式
+    */
+   #outer {
+    /*設置寬和高*/
+    width: 100vw;
+    /* height: 333px; */
+    height: 100vh;
+    /*居中*/
+    margin: 50px auto;
+    /*設置背景顏色*/
+    /* background-color: orange; */
+    /*設置padding*/
+    padding: 10px 0;
+    /*開啟相對定位*/
+    position: relative;
+    /*裁剪溢出的內容*/
+    overflow: hidden;
+   }
+   
+   /*設置圖片列表*/
+   #img-list {
+    /*去除項目符號*/
+    list-style: none;
+    /*設置ul的寬度*/
+    /*width: 2600px;*/
+    /*開啟絕對定位*/
+    position: absolute;
+    /*設置偏移量（每向左移動520px，就會顯示到下一張圖片）*/
+    left: 0px;
+   }
+   
+   /*設置圖片中的li*/
+   #img-list li {
+    /*設置浮動*/
+    float: left;
+    /*設置左右外邊距*/
+    margin: 0 10px;
+   }
+   
+   /*設置導航按鈕*/
+   #nav-btns {
+    /*開啟絕對定位*/
+    position: absolute;
+    /*設置位置*/
+    bottom: 15px;
+   }
+   
+   #nav-btns a {
+    /*設置超鏈接浮動*/
+    float: left;
+    /*設置超鏈接的寬和高*/
+    width: 15px;
+    height: 15px;
+    /*設置背景顏色*/
+    background-color: red;
+    /*設置左右外邊距*/
+    margin: 0 5px;
+    /*設置透明*/
+    opacity: 0.5;
+    /*兼容IE8透明*/
+    filter: alpha(opacity=50);
+   }
+   
+   /*設置鼠標移入的效果*/
+   #nav-btns a:hover {
+    background-color: black;
+   }
+   img{
+       width: 100vw;
+       height: 100vh;
+   }

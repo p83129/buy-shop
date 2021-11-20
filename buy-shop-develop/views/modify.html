@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1.0" />
+  <title>Buy-Shop</title>
+  <link rel="stylesheet" type="text/css" href="css/modify.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@800&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+  <!-- 標題 -->
+  <header>
+    <div class="title_background">
+      <div class="title_div">
+        <img class="img_logo" src="image/home.png">
+        <div class="home">
+          <span onclick="home()">首頁</span>
+          >
+          <a>我的商品</a>
+        </div>
+      </div>
+      <!-- 賣家登出 -->
+      <div class="header_div">
+        <a id="a_change" onclick="signdelete()" onmouseover=Text1(this) onmouseout=Text_Image(this)>
+          <i class="far fa-user"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 目錄--side_bar -->
+  <div class="side_bar">
+    <div class="menu" id="menu">
+      <div class="item">
+        <a id="item_title">商品管理
+          <i class="fas fa-angle-down down_btn" id="down_btn"></i>
+        </a>
+        <div class="item_list" id="item_list">
+          <div class="wrap">
+            <a href="/modify.html">我的商品</a>
+            <a href="/add.html">新增商品</a>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <a id="item_title1">代辦事項
+          <i class="fas fa-angle-down down_btn" id="down_btn1"></i>
+        </a>
+        <div class="item_list" id="item_list1">
+          <div class="wrap">
+            <a href="#">待出貨訂單</a>
+            <a href="#">已完成訂單</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="company_txt">© 2021 by 嘴饞國際開發股份有限公司</div>
+  </div>
+
+  <!-- <div class="title_div1">
+    <div class="product-sort">
+      <div class="panel-group country_selection" id="accordion">
+        <div class="panel panel-default" style="margin-top: -16px;">
+          <div class="panel-heading" style="background-color: #DEDEDE;">
+            <h4 class="panel-title">
+              <button style="text-decoration:none;border: none;background-color: #DEDEDE;" data-toggle="collapse"
+                data-parent="#accordion" href="#country" onclick="change1()">
+                商品管理　　　　　　　　 　　
+                <img id="image1" class="width_img" src="image/image_down.png" />
+              </button>
+            </h4>
+          </div>
+          <div id="country" style="font-size:smaller;" class="panel-collapse collapse in line_height_div">
+            <div class="panel-body border_div">
+              <a style="text-decoration:none;color:black;" data-toggle="collapse" data-parent="#accordion" href="#">
+                我的商品
+              </a>
+            </div>
+            <div class="panel-body border_div">
+              <a style="text-decoration:none;color:black;" href="/add.html">
+                新增商品
+              </a>
+            </div>
+          </div>
+
+          <div class="panel-heading" style="background-color: #DEDEDE;">
+            <h4 class="panel-title">
+              <button style="text-decoration:none;border: none;background-color: #DEDEDE;" data-toggle="collapse"
+                data-parent="#accordion" href="#country" onclick="change1()">
+                代辦事項　　　　　　　　 　　
+                <img id="image1" class="width_img" src="image/image_down.png" />
+              </button>
+            </h4>
+          </div>
+          <div id="country" style="font-size:smaller;" class="panel-collapse collapse in line_height_div">
+            <div class="panel-body border_div">
+              <a style="text-decoration:none;color:black;" data-toggle="collapse" data-parent="#accordion" href="#">
+                待出貨訂單
+              </a>
+            </div>
+            <div class="panel-body border_div">
+              <a style="text-decoration:none;color:black;" data-toggle="collapse" data-parent="#accordion" href="#">
+                已完成訂單
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="company_txt">© 2021 by 嘴饞國際開發股份有限公司</div>
+  </div> -->
+
+
+
+  <!-- 修改內容 -->
+  <div class="contect">
+    <div class="list-div1">
+      <div class="flaot-left list-div2">商品名稱</div>
+      <div class="flaot-left list-div3">
+        <span class="list-div4">價格</span>
+        <span class="list-div4">數量</span>
+        <span class="list-div4">已出售</span>
+      </div>
+      <div class="flaot-left list-div2">操作</div>
+    </div>
+
+
+    <div class="list-div5">
+      <div class="flaot-left list-div2">
+        <img src="image/蜂蜜2.jpg" class="list-img flaot-left">
+        <div class="list-div9">
+          <div class="list-div6">未上架</div>
+          <div class="list-div7">jkjldfsfdfsfdffffffffffffffffffffffffksa</div>
+          <div class="list-div8">商品貨號一</div>
+        </div>
+      </div>
+      <div class="flaot-left list-div3">
+        <span class="list-div4">NT$38</span>
+        <span class="list-div4">1</span>
+        <span class="list-div4">11</span>
+      </div>
+      <div class="flaot-left list-div2 disply-block">
+        <div><a href="javascript:">編輯</a></div>
+        <div class="list-div10"><a href="javascript:">上架</a></div>
+      </div>
+    </div>
+    <div class="list-div5">
+      <div class="flaot-left list-div2">
+        <img src="image/蜂蜜2.jpg" class="list-img flaot-left">
+        <div class="list-div9">
+          <div class="list-div6" style="display: none;">未上架</div>
+          <div class="list-div7">jkjldfsfdfsfdffffffffffffffffffffffffksa</div>
+          <div class="list-div8">商品貨號一</div>
+        </div>
+      </div>
+      <div class="flaot-left list-div3">
+        <span class="list-div4">NT$38</span>
+        <span class="list-div4">1</span>
+        <span class="list-div4">11</span>
+      </div>
+      <div class="flaot-left list-div2 disply-block">
+        <div><a href="javascript:">編輯</a></div>
+        <div class="list-div10"><a href="javascript:">下架</a></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+<script src="js/modify.js"></script>
+<!-- <script src="js/sidebar.js"></script> -->
+</html>

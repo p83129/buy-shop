@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="">
+
+保留 HTML: <input type="checkbox" ng-model="myVar" ng-init="myVar = true">
+
+<div ng-if="myVar">
+<h1>Welcome</h1>
+<p>Welcome to my home.</p>
+<hr>
+</div>
+
+<p>当复选框取消选中时 DIV 元素将移除。</p>
+<p>当重新选中复选框，DIV 元素会重新显示。</p>
+
+</body>
+</html>

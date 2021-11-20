@@ -1,0 +1,136 @@
+/* 大小切換 */
+#check:checked ~ .content{
+    width: 56%;
+    margin-left: 400px;/*原本500*/
+}
+/* #check:checked ~ .content .title_div{
+    margin-left: -100px;
+} */
+
+/* 商品 */
+.content{
+    width: 75%;
+    position: relative;
+	margin: 50px 185px;
+    transition: .5s;
+}
+.title_div{
+    position: relative;
+    transition: .5s;
+}
+.title_div a{
+	text-decoration: none;
+    color: black;
+}
+.title_div #home:hover,
+.title_div #proot:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* 跟目錄後搜尋 */
+.searchtext_div{
+    position: absolute;
+    top: 0;
+    left: 250px;
+    opacity: 0;
+    transition: .5s ease;
+}
+.search_text{
+    border: none;
+    border-bottom:1px solid;
+    padding-left: 5px;
+    outline: none;
+}
+.searchtext_div i{
+    cursor: pointer;
+}
+
+.center{
+	text-align: center;
+}
+.font_weight{
+	font-weight: bold;
+}
+.view{
+	display:flex;
+	/* justify-content:center; */
+	flex-wrap:wrap;
+	margin-top:20px;
+}
+.product_box{
+	width:250px;	
+	margin:15px;
+	padding: 5px;
+	display:flex;
+	flex-direction: column;
+	float: left;	
+	border:1px solid #E8E8E8;
+	border-radius:5px;
+	box-sizing: border-box;
+}
+.product_box:hover{
+    transition: .5s ;
+    transform: scale(1.1);
+}
+.product_img{	
+	width:100%;
+	height:180px;	
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	cursor: pointer;
+	
+}
+.product_text{
+	overflow: hidden;
+	text-overflow : ellipsis;
+	text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+	line-height: 25px;
+	color: #6b6a6a;
+}
+.td1{
+	color: red;
+    font-size: 16px;
+    font-family:  "Helvetica Neue","Helvetica","微軟正黑體修正","Microsoft JhengHei",sans-serif;
+	
+}
+.like_img{
+	width: 18px;
+    height: 18px;
+	float: right;
+	cursor: pointer;
+}
+
+/* 最底下資訊欄 */
+.hr_color{
+	margin-top: 100px;
+    width: 100%;
+    height: 1px;
+    background-color: #696969;
+}
+.table-style{
+    color: #696969;  
+    line-height: 30px;    
+}
+.tr{
+    padding: 30px 180px 10px 0px;
+    font-size: 25px;
+}
+.company_txt{
+    margin: 20px 0px;
+    text-align: center;
+    color: #696969;
+    margin-right: 25%;
+}
+
+/* 屬性 */
+.sing_in:hover { 
+    opacity: 0.5; 
+}
+.active_btn:hover{
+    opacity: 0.5;
+}

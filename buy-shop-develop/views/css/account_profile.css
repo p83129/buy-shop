@@ -1,0 +1,82 @@
+/* 大小切換 */
+#check:checked ~ .memberInfo_background{
+    margin-left: 400px;
+    transition: .5s;
+}
+
+/* 會員資料  */
+.memberInfo_background{
+    width: 70%;
+    height: 500px;
+    margin: 50px 225px;
+}
+/* 個人基本資料 */
+.lInfo_background{
+    width: 50%;
+    height: 100%;
+    padding: 0 60px;
+    float: left;
+}
+.title_info{
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 30px;
+}
+.margin_div{
+    margin: 0 0 15px;
+}
+.margin_div input{
+    border-bottom: 1px solid ;
+}
+.margin_div input:focus{
+    border-bottom: 1px solid #fa8072;
+}
+.member_input{
+    font-size: 14px;
+    border: 0;
+    border-bottom: 1px solid #595757;
+    padding: 3px 10px;
+    outline: none;
+    width: 100%;
+}
+.member_bg{
+    background-color: #eee;
+}
+/* 更改密碼 */
+.btn_div_1{
+    cursor: pointer;
+}
+.btn_modify{
+    width: 100%;
+    margin: 0 0 5px;
+    display: inline-block;
+    background: #fa8072;
+    /* color: #fff; */
+    font-size: 14px;
+    line-height: 45px;
+    padding: 0 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+.error{
+    color: red;
+    width: 100%;
+    font-size: 12px;
+    display: none;
+}
+
+
+/* 屬性設計 */
+/* label{
+    font-size: 16px;
+}
+button:hover { 
+    opacity: 0.5; 
+}
+img{
+    cursor: pointer;
+}
+input:focus {
+    border-bottom: 2px solid #fa8072;
+} */

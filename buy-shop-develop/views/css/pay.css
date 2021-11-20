@@ -1,0 +1,219 @@
+/* 大小切換 */
+#check:checked ~ .center{
+    margin-left: 400px;
+    transition: .5s;
+}
+
+/* 購買步驟 */
+.step_panel{
+    height: 52px;
+    margin-bottom: 30px;
+}
+.step_panel li{
+    list-style: none;
+    float: left;
+    position: relative;
+    width: 33.33%;
+    height: 52px;
+    text-align: center;
+    background-color: #dfdfdf;
+    box-shadow: -5px 0 #fff inset;
+}
+.step_panel li.action{
+    color: #fff;
+    background-color: #696969;
+}
+#page_cart .step_panel_step1:before,
+#page_cart .step_panel_step2:before{
+    content: '';
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    right: 5px;
+    top: 0;
+    background-color: #fff;
+    border-width: 26px 0 26px 30px;
+    border-style: solid;
+    border-color: #fff transparent #fff #dfdfdf;
+    /* border-color: #fff transparent #fff #696969; */
+}
+#page_cart .step_panel_step1.action:before,
+#page_cart .step_panel_step2.action:before{
+    border-color: #fff transparent #fff #696969;
+}
+#page_cart .step_panel span.action{
+    color: #fff;
+}
+#page_cart .step_panel .step_panel_num{
+    font-size: 22px;
+    margin: 0 24px 0 -24px;
+    position: relative;
+    top: 2px;
+}
+#page_cart .step_panel .step_panel_item{
+    line-height: 52px;
+    letter-spacing: .08em;
+}
+
+
+/* 付款資訊 */
+.center{
+    width: 70%;
+    margin: 50px 225px;
+}
+.pay_div{
+    width: 20%;
+    margin: 50px;
+}
+.booking_model{         
+    width: 100%; 
+    padding-left: 10px;                
+}
+.line_height{
+    line-height: 50px;
+}
+.text_hello{
+    font-family: Noto Sans TC;
+    font-style: normal;  
+    font-weight: normal;      
+    font-size: 19px;
+    line-height: 16px;     
+    align-items: center;
+    /* color: #666666; */
+}
+.text_bold{
+    font-weight: bold;
+}
+.text_content{
+    font-family: Noto Sans TC;
+    font-style: normal;     
+    font-size: 16px;
+    line-height: 30px; 
+    align-items: center;
+    color: #666666;
+}
+.input_text{        
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    /* width: 200px; */
+    height: 35px;
+    padding: 10px;
+    margin-right: 10px;
+    outline-color: #E8E8E8;
+}
+.input_bg{
+    background: #eee;
+    border:none;
+}
+.line{
+    width: 1000px;
+    margin: 20px 0;
+    height: 1px;
+    background-color: #696969;
+}
+.div_margin{
+    margin: 10px 0px
+}
+.card_div{
+    margin: -30px 90px 0 85px;
+}
+/* .text_align{
+    text-align: right;
+} */
+.btn_buy{
+    position: relative;
+    text-align: center;
+}
+.btn{
+    height: 31px;
+    padding: 0 16px;
+    background-color: #fa8072;
+    font-family: "Roboto", Verdana, Geneva, Tahoma, "Heiti TC", "Microsoft JhengHei", sans-serif;
+    line-height: 31px;
+    display: inline-block;
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.btn_buy .btn{
+    position: relative;
+    width: 175px;
+    height: 32px;
+    border: none;
+}
+.btn_buy .btn:first-child:after{
+    right: auto;
+    left: -16px;
+    border-width: 16px 16px 16px 0;
+    border-style: solid;
+    border-color: transparent #fa8072 transparent transparent;
+}
+.btn_buy .btn:after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: -16px;
+    top: 0;
+    border-width: 16px 0 16px 16px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fa8072;
+}
+.btn:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+/* 檢核信用卡欄位 */
+.tappay-field-focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.has-error .tappay-field-focus {
+    border-color: #843534;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+}
+.has-success .tappay-field-focus {
+    border-color: #2b542c;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+}
+
+/*  */
+.text_hello{
+    font-family: Noto Sans TC;
+    font-style: normal;  
+    font-weight: normal;      
+    font-size: 19px;
+    line-height: 16px;       
+    /* display: flex; */
+    align-items: center;
+    color: #666666;
+}
+.button{
+    width: 175px;
+    height: 40px;
+    background: #448899;
+    border-radius: 5px;
+    color: #FFFFFF;
+    border: none;
+}
+.error{
+    position: absolute;
+    margin-top: 10px;
+    color: red;
+    font-size: 12px;
+    display: none;
+}

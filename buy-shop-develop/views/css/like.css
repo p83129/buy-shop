@@ -1,0 +1,126 @@
+/* 大小切換 */
+#check:checked ~ .center{
+    margin-left: 400px;
+    transition: .5s;
+}
+
+
+/* 收藏清單 */
+.center{
+    width: 70%;
+    margin: 50px 225px;
+    padding: 0 50px;
+}
+.center h4{
+    border-left-style: solid;
+    border-left-color: #fa8072;
+    margin: 0 10px;
+    padding: 0 5px;
+}
+.div_wishList{
+    display: flex;
+    padding: 10px;
+    border-bottom: ridge;
+}
+.div_wishList img{
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.div_flex{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.div_flex1{
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+}
+.div_Name{
+    width: 100%;
+    padding: 5px 0;
+    text-decoration:none;
+}
+.div_Name div{
+    font-size: 14px;
+    line-height: 14px;
+    height: 28px;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+}
+.div_Name:hover{
+    text-decoration:underline;
+}
+.div_pName_delBtn{
+    padding: 5px 0;
+}
+.div_pName_delBtn a{
+    color: #696969;
+}
+.div_pName_delBtn a:hover{
+    color: #fa8072;
+    cursor: pointer;
+}
+.taste{
+    line-height: 30px;
+    display: flex;/*彈性布局*/
+    flex-direction: column;/*垂直排列*/
+}
+.taste h6{
+    font-size: 13px;
+    line-height: 14px;
+    margin-bottom: 10px;
+    color: rgb(102, 102, 102);
+}
+.taste a{
+    width: 10%;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #696969;
+    color: #696969;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.div_price_cart{
+    display: flex;
+}
+.div_price_cart p{
+    width: 90%;
+    font-size: 16px;
+    color: red;
+    line-height: 1.5em;
+    padding: 0 5px;
+}
+/* .div_price_cart button{
+    background-color: #ffc107;
+    line-height: 40px;
+    color: #fff;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 130px;
+}
+.div_price_cart button:hover{
+    opacity: 0.5;
+} */
+
+/* 目前收藏為空 */
+.like_empty{
+    width: 100%;
+}
+.like_empty_div{
+    text-align: center;
+    margin: 150px;
+}
+.like_empty_div img{
+    width: 150px;
+}
+.like_text{
+    padding-top: 20px;
+}
+.like_text p{
+    color: #b5b5b5;
+}

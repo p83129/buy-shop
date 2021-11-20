@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1.0" />
+    <title>Buy-Shop</title>
+    <link rel="stylesheet" type="text/css" href="css/product_detail.css" />
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@800&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+</head>
+
+<body>
+    <!-- 目錄--side_bar -->
+    <input type="checkbox" id="check">
+    <h1 class="logo_div" onclick="home()">EATING</h1>
+    <div class="menu_btn animated">
+        <label for="check" class="pointer">
+            <i class="fas fa-utensils"></i>
+        </label>
+    </div>
+    <div class="side_bar" id="side_bar">
+        <div class="close_btn">
+            <label for="check" class="pointer">
+                <i class="fas fa-times"></i>
+            </label>
+        </div>
+        <div class="logo" onclick="home()">
+            <h1>EATING</h1>
+        </div>
+        <div class="menu" id="menu">
+            <div class="search_div">
+                <input type="text" placeholder="Search..." onfocus="this.placeholder=''"
+                    onblur="this.placeholder='Search...'" class="search" id="search_word">
+                <button type="button" onclick="search()" id="search_btn">
+                    <img src="image/search_img.png" class="search_img">
+                </button>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <i class="fas fa-crown"></i>人氣商品
+                </a>
+            </div>
+            <div class="item">
+                <a class="sub_btn" id="sub_btn">
+                    <i class="fas fa-globe-asia"></i>國家選擇
+                    <i class="fas fa-angle-down down_btn" id="down_btn"></i>
+                </a>
+                <div class="sub_menu" id="sub_menu">
+                    <div class="wrap">
+                        <a href="/product:100" class="sub_item">All 所有</a>
+                        <a href="/product:1001" class="sub_item">TAIWAN 台灣</a>
+                        <a href="/product:1002" class="sub_item">JAPAN & KOREA 日韓</a>
+                        <a href="/product:1003" class="sub_item">EUROPE & AMERICA 歐美</a>
+                        <a href="/product:1004" class="sub_item">SOUTHEAST ASIA 東南亞</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <a class="sub_btn" id="sub_btn1">
+                    <i class="fas fa-seedling"></i>素食選擇
+                    <i class="fas fa-angle-down down_btn" id="down_btn1"></i>
+                </a>
+                <div class="sub_menu" id="sub_menu1">
+                    <div class="wrap">
+                        <a href="/product:200" class="sub_item">All 所有</a>
+                        <a href="/product:2001" class="sub_item">純素/全素</a>
+                        <a href="/product:2002" class="sub_item">奶蛋素</a>
+                        <a href="/product:2003" class="sub_item">植物五辛素</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <a class="sub_btn" id="sub_btn2">
+                    <i class="fas fa-teeth"></i>口味選擇
+                    <i class="fas fa-angle-down down_btn" id="down_btn2"></i>
+                </a>
+                <div class="sub_menu" id="sub_menu2">
+                    <div class="wrap">
+                        <a href="/product:300" class="sub_item">All 所有</a>
+                        <a href="/product:3001" class="sub_item">SALTY 鹹</a>
+                        <a href="/product:3002" class="sub_item">SWEET 甜</a>
+                        <a href="/product:3003" class="sub_item">SPICY 辣</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <a class="sub_btn" id="sub_btn3">
+                    <i class="fas fa-user"></i>會員專區
+                    <i class="fas fa-angle-down down_btn" id="down_btn3"></i>
+                </a>
+                <div class="sub_menu" id="sub_menu3">
+                    <div class="wrap">
+                        <a href="/order.html" class="sub_item">訂單查詢</a>
+                        <a href="/account_profile.html" class="sub_item">會員資料</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 收藏 會員登入 購物車 -->
+    <header id=header></header>
+    <header>
+        <div class="header_menu">
+            <div class="header_div">
+                <a href="/like.html">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="button1">
+                <div class="header_div">
+                    <a id="a_change" href="/login.html">
+                        <i class="far fa-user"></i>
+                    </a>
+                </div>
+                <div class="img_div" style="display: none;">
+                    <ul class="hover">
+                        <li class="list_style">
+                            <button style="display: none;" class="sing" id="signdelete" onclick="signdelete()">
+                                會員登出
+                            </button>
+                        </li>
+                        <li class="list_style">
+                            <div class="out" style="display: none;" onMouseOver="this.className='out_after1';"
+                                onMouseOut="this.className='out';" id="orders" onclick="orders()">訂單查詢
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="button2">
+                <div class="header_div">
+                    <a href="/cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                <div class="img_div">
+                    <ul class="hover">
+                        <li class="list_style list_style2">
+                            總計:NT$0
+                        </li>
+                        <li class="list_style">
+                            <button class="out_after1 active_btn" onclick="cart()">
+                                立即結帳
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- scroll back to top -->
+    <div id="top_btn">
+        <a title="GO TO TOP">
+            <i class="fas fa-arrow-circle-up"></i>
+        </a>
+    </div>
+
+    <!-- 商品資訊 -->
+    <div class="content">
+        <div class="title_div">
+            <a id="home" onclick="home()">首頁</a>
+            　>　
+            <a id="proot" onclick="proot()"></a>
+            　>　
+            <a id="pbranch" onclick="pbranch()"></a>
+        </div>
+        <div class="product_contect">
+            <img class="product_img" id="img1">
+            <h4 id="pname"></h4>
+            <div class="like_div">
+                <img id="like_btn" onclick="like()" src="image/like_img.png"></img>
+            </div>
+            <h3 id="price"></h3>
+            <div class="taste_div">
+                <h6>口味</h6>
+                <div id="ptype"></div>
+            </div>
+            <div class="taste_div taste_div_width">
+                <h6 class="teate_txt">數量</h6>
+                <div class="product_num">
+                    <button class="decrease" onclick="setQuantity('down')">一</button>
+                    <input class="qty" id="amount" disabled="disabled" value="1"></input>
+                    <button class="increase" onclick="setQuantity('up')">十</button>
+                    <div class="btn_box">
+                        <button id="add_btn" value="加入購物車" class="input_button_1" onclick="add_cart()">
+                            加入購物車
+                        </button>
+                        <button value="立即結帳" class="input_button_2" onclick="cart()">
+                            立即結帳
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 詳細說明 -->
+        <!-- 商品頁籤 -->
+        <span id="tab-1">詳細說明</span>
+        <span id="tab-2">評價分享</span>
+        <span id="tab-3">商品介紹</span>
+
+        <!-- 頁籤按鈕 -->
+        <div id="tab">
+            <ul>
+                <li><a href="#tab-1">詳細說明</a></li>
+                <li><a href="#tab-2">評價分享</a></li>
+                <li><a href="#tab-3">商品介紹</a></li>
+            </ul>
+            <!-- 頁籤的內容區塊 -->
+            <div class="tab-content-1">
+                <!-- <p>主頁面顯示的內容</p> -->
+                <div id="imgall">
+                </div>
+            </div>
+            <div class="tab-content-2">
+                <div class="message_form">
+                    <table id="table_content">
+                        <tr>
+                            <th class="border_style">會員</th>
+                            <th class="border_style">留言</th>
+                            <th class="border_style">評價</th>
+                        </tr>
+                    </table>
+                    <!-- 留言板 -->
+                    <div class="message_background" id="message_txt">
+                        <p id="feel">*好感度 :</p>
+                        <div id="stars" class="right">
+                            <img class="star_width" src="./image/star.png">
+                            <img class="star_width" src="./image/star.png">
+                            <img class="star_width" src="./image/star.png">
+                            <img class="star_width" src="./image/star.png">
+                            <img class="star_width" src="./image/star.png">
+                        </div>
+                        <div id="comment" class="left"></div>
+                        <textarea type="textarea" required id="text_amount" name="text_amount" class="textarea_message"
+                            onkeyup="sizecontrol()" placeholder="請寫下您的感想..."></textarea>
+                        <h6 class="count_style" id="count">0/300</h6>
+                    </div>
+                    <!-- 評論按鈕 -->
+                    <div class="div_btn_message">
+                        <button id="write" onclick="message(1)">我要評論</button>
+                        <button id="cancel" onclick="message(2)" style="display: none;">取消</button>
+                        <button id="submit" onclick="message(3)" style="display: none;">送出</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content-3">
+                <div id="product_info"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 最底下資訊欄 -->
+    <div class="hr_color"></div>
+    <div class="botminfo_div">
+        <table class="table-style">
+            <tr>
+                <th class="tr">關於我們</th>
+                <th class="tr">購物說明</th>
+                <th class="tr">客服資訊</th>
+            </tr>
+            <tr>
+                <td>品牌故事</td>
+                <td>付款方式</td>
+                <td>客服留言</td>
+            </tr>
+            <tr>
+                <td>商店簡介</td>
+                <td>運送方式</td>
+                <td>常見問題</td>
+            </tr>
+            <tr>
+                <td>隱私權及網站使用條款</td>
+                <td>退換貨方式</td>
+                <td>會員權益聲明</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>聯絡我們</td>
+            </tr>
+        </table>
+    </div>
+    <div class="company_txt">
+        <p>© 2021 by 嘴饞國際開發股份有限公司</p>
+    </div>
+</body>
+<script src="js/product_detail.js"></script>
+<script src="js/sidebar.js"></script>
+
+</html>
