@@ -53,13 +53,15 @@ router.get('/product/:type', async function(req,res){
                     
                     let img = "";
                     product_img.forEach(img1 =>{
-                        if(img1.pno == products[0].pno){
+                        if(img1.pno == products[i].pno){
                             img = img1.img1;
                         }
                     });
 
                     if(email != ""){
                         let likeproduct = await db.select_product_like(email, products[i].pno);
+                        console.log("55555555555555555555", likeproduct);
+                        console.log("66666666666666666666", likeproduct[0].likeproduct);
                         if(likeproduct[0].likeproduct != undefined) templikeproduct = likeproduct[0].likeproduct;
 
                         // templikeproduct = get_likeproduct(email, element.pno);
@@ -80,6 +82,7 @@ router.get('/product/:type', async function(req,res){
                     
                     
                     bigdata.push({'pno':products[i].pno, 'pname':products[i].pname, 'pprice':products[i].pprice, 'image':img, 'likeproduct':templikeproduct});
+                    templikeproduct = "";
                             
                    
                 }

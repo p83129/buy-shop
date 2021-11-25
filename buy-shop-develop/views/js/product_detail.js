@@ -24,7 +24,7 @@ window.onload=function(){
         }
     }).catch((e) => {
         console.log(e,"data失敗內容~~~~~~~~~~~")
-        alert(e,"查詢失敗");
+        //alert(e,"查詢失敗");
     });
 
     //確認登入狀態
@@ -313,7 +313,7 @@ function message(e){
                     }
                 }).catch((e) => {
                     console.log(e,"data失敗內容~~~~~~~~~~~")
-                    alert(e,"檢查失敗");
+                    //alert(e,"檢查失敗");
                 });
 
             }
@@ -422,12 +422,12 @@ function put_comment(){
                 write.style.display = 'block';     
             }
             else{             
-                alert(data["msg"]);
+                //(data["msg"]);
                 write.style.display = 'none';
             }
         }).catch((e) => {
             console.log(e,"data失敗內容~~~~~~~~~~~")
-            alert(e,"檢查失敗");
+            //alert(e,"檢查失敗");
         });
 }
 
@@ -448,7 +448,7 @@ function getcomment(){
            put_comment();
         }
         else{                    
-            alert(data["errmsg"]);
+            //alert(data["errmsg"]);
         }
     }).catch((e) => {
         console.log(e,"data失敗內容~~~~~~~~~~~")
@@ -581,7 +581,7 @@ function add_cart(){
                 alert("加入成功");  
             }
             else{                    
-                alert(data["errmsg"]);
+                //(data["errmsg"]);
             }
         }).catch((e) => {
             console.log(e,"data失敗內容~~~~~~~~~~~")

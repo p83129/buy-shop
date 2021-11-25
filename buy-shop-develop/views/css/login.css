@@ -110,7 +110,7 @@
 }
 
 /* 忘記密碼 */
-.forget_pas_div{
+/* .forget_pas_div{
     width: 500px;
     position: absolute;
     z-index: 3;
@@ -125,7 +125,7 @@
     color: #fa8072;
     font-size: 20px;
     font-weight: bold;
-}
+} */
 .forget_pas_div_1 {
     margin-top: 30px;
     text-align: center;

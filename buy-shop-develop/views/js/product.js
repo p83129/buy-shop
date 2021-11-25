@@ -70,7 +70,7 @@ function call(id){
         }
     }).catch((e) => {
         console.log(e,"data失敗內容~~~~~~~~~~~")
-        alert(e,"查詢失敗");
+        //alert(e,"查詢失敗");
     });
 }
 
