@@ -1,6 +1,5 @@
 let id = location.pathname.substr(9);
-let loginstatus = "";
-//alert(id);
+
 
 window.onload=function(){    
     //抓商品
@@ -32,7 +31,7 @@ function call(id){
             let proot = document.getElementById("proot");
             let pbranch = document.getElementById("pbranch"); 
             let product = document.getElementById("product");
-            let location_href = decodeURI(location.href);
+            let location_href = location.href.split("/");
 
             if(id.substr(0,1) == "1"){
                 proot.innerHTML = "國家";
@@ -65,7 +64,7 @@ function call(id){
 
             proot.setAttribute("onclick","searchtext_btn()");
             proot.innerHTML = "搜尋";
-            pbranch.innerHTML = location_href.substring(30);
+            pbranch.innerHTML = decodeURI(location_href[1].substring(8));
             product.innerHTML = "查無相關商品...";
         }
     }).catch((e) => {
@@ -178,22 +177,24 @@ function products(data){
     let p = document.createElement("p");
     let proot = document.getElementById("proot");
     let pbranch = document.getElementById("pbranch");
-    let location_href = decodeURI(location.href);
+    // let location_href = decodeURI(location.href);
+    let location_href = location.href.split("/");
+    // alert(url[3].substring(8))
 
     //判斷純文字
     let reg = /^[\u4E00-\u9FA5]+$/ ;
-    if (reg.test(location_href.substring(30))) {
+    if (reg.test(decodeURI(location_href[1].substring(8)))) {
         proot.setAttribute("onclick","searchtext_btn()");
         proot.innerHTML = "搜尋";
-        if(id.length == 3) pbranch.innerHTML = location_href.substring(30);
-        else pbranch.innerHTML = location_href.substring(30);
+        if(id.length == 3) pbranch.innerHTML = decodeURI(location_href[1].substring(8));
+        else pbranch.innerHTML = decodeURI(location_href[1].substring(8));
 	
     }else{
         proot.innerHTML = data['proot'];
         if(id.length == 3) pbranch.innerHTML = "ALL所有";
         else pbranch.innerHTML = data['pbranch'];
     }	
-    p.innerText = '共' + i + '件商品';
+    p.innerText = '共' + data["data"].length + '件商品';
     title_div.appendChild(p);
 }
 

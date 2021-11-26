@@ -10,8 +10,8 @@ window.onload=function(){
     }).then((data)=>{
         if(data["ok"] == true){
             //購物車數量
-            let lblCartCount = document.getElementById("lblCartCount");
-            lblCartCount.outerHTML= data["data"].length;
+            // let lblCartCount = document.getElementById("lblCartCount");
+            // lblCartCount.outerHTML= data["data"].length;
             //alert("查詢成功");            
         }
         else{             
