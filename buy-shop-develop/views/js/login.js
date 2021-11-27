@@ -1,14 +1,3 @@
-//導向輸入帳號
-
-// window.onload =function() {
-//     setTimeout(function() {
-//         // var buy = document.getElementById("signin_email"); 
-//         document.getElementById('signin_email').dispatchEvent(newEvent('mouseover'));
-//         document.getElementById('signin_email').click();
-//     }, 200); 
-// };
-
-
 //登入/註冊
 function change(num){
     let login = document.getElementById("login");
@@ -158,7 +147,7 @@ function signin(){
     }
 }
 
-// 忘記密碼小視窗
+// 忘記密碼小視窗-->目前還未完成
 function forget_password(){
     let forget_password = document.getElementById('forget_password');
     let hidebg = document.getElementById('hidebg');
@@ -249,6 +238,7 @@ function search(){
 function home(){
     window.location.href='/'; 
 }
+
 //立即結帳
 function cart(){
     window.location.href='cart.html';

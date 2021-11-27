@@ -1,5 +1,4 @@
 window.onload=function(){
-
     //確認登入狀態
     checkprofile();  
 }
@@ -46,30 +45,67 @@ function changepw(){
 
     let oldpassword = document.getElementById("old_password").value;
     let newpassword = document.getElementById("new_password").value;
-        
-    let info={
-        "oldpassword": oldpassword,
-        "newpassword": newpassword
-    }
-    let req = new XMLHttpRequest();   
-    fetch("/api/profile", {
-        method:"PATCH",   
-        body: JSON.stringify(info),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then((data)=>{
-        if(data["ok"] == true){  
-            alert("修改密碼成功");            
-        }       
-        else{             
-            alert("修改密碼失敗");
-        }
-    }).catch((e) => {
-        console.log(e,"data失敗內容~~~~~~~~~~~")
-        alert(e,"修改密碼失敗");
-    });
 
+    if(oldpassword == "" || newpassword == ""){
+        debugger;
+    }else{
+        let info={
+            "oldpassword": oldpassword,
+            "newpassword": newpassword
+        }
+        let req = new XMLHttpRequest();   
+        fetch("/api/profile", {
+            method:"PATCH",   
+            body: JSON.stringify(info),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((data)=>{
+            if(data["ok"] == true){  
+                alert("修改密碼成功");            
+            }       
+            else{             
+                alert("修改密碼失敗");
+            }
+        }).catch((e) => {
+            console.log(e,"data失敗內容~~~~~~~~~~~")
+            alert(e,"修改密碼失敗");
+        });
+    
+    }   
+}
+
+//表單不為空判斷
+function beforeSubmit(){
+    var old_password = document.getElementById('old_password').value;
+    var error_old_password = document.getElementById('error_old_password'); 
+    var new_password = document.getElementById('new_password').value;
+    var error_new_password = document.getElementById('error_new_password');
+    var ensure_password = document.getElementById('ensure_password').value;
+    var error_ensure_password = document.getElementById('error_ensure_password'); 
+    var different_password = document.getElementById('different_password');
+
+    if(old_password=="" || old_password==null){       
+        error_old_password.style.display = 'block';
+    }else {
+        error_old_password.style.display = 'none';
+    }
+    if(new_password=="" || new_password==null){       
+        error_new_password.style.display = 'block';
+    }else {
+        error_new_password.style.display = 'none';
+    }
+    if(ensure_password=="" || ensure_password==null){       
+        error_ensure_password.style.display = 'block';
+    }else {
+        error_ensure_password.style.display = 'none';
+    }
+    if(new_password!=ensure_password){
+        alert("新密碼與確認新密碼不一致");
+        different_password.style.display = 'block';
+    }else{
+        different_password.style.display = 'none';
+    }
 }
 
 //確認登入狀態
@@ -155,41 +191,6 @@ function signdelete(){
     
 }
 
-//表單不為空判斷
-function beforeSubmit(){
-    var old_password = document.getElementById('old_password').value;
-    var error_old_password = document.getElementById('error_old_password');
-    
-    var new_password = document.getElementById('new_password').value;
-    var error_new_password = document.getElementById('error_new_password');
-
-    var ensure_password = document.getElementById('ensure_password').value;
-    var error_ensure_password = document.getElementById('error_ensure_password');
-   
-    var different_password = document.getElementById('different_password');
-
-    if(old_password=="" || old_password==null){       
-        error_old_password.style.display = 'block';
-    }else {
-        error_old_password.style.display = 'none';
-    }
-    if(new_password=="" || new_password==null){       
-        error_new_password.style.display = 'block';
-    }else {
-        error_new_password.style.display = 'none';
-    }
-    if(ensure_password=="" || ensure_password==null){       
-        error_ensure_password.style.display = 'block';
-    }else {
-        error_ensure_password.style.display = 'none';
-    }
-    if(new_password!=ensure_password){
-        alert("新密碼與確認新密碼不一致");
-        different_password.style.display = 'block';
-    }else{
-        different_password.style.display = 'none';
-    }
-}
 
 //搜尋按鈕
 function search(){
