@@ -1,6 +1,94 @@
+// window.onload=function(){
+//     //確認登入狀態
+//     checkprofile();  
+// }
+
+//記住使用者密碼
+let user_password;
+
+//確認登入狀態
 window.onload=function(){
-    //確認登入狀態
-    checkprofile();  
+    // function checkprofile(){
+        let req = new XMLHttpRequest(); 
+        fetch("/api/profile",{
+            method:"GET",   
+            // body: JSON.stringify(signin_info),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((response)=>{
+            return response.json();
+        }).then((data)=>{
+            if(data["error"] == null){
+                //alert("登入中....");
+                user_password = data[0].password;
+
+                let signdelete = document.getElementById("signdelete");
+                let orders = document.getElementById("orders");
+
+                let a_change = document.getElementById("a_change");
+                let img_div = document.querySelector(".img_div");
+
+                signdelete.style.display = "block";
+                orders.style.display = "block";
+
+                a_change.setAttribute("href","/account_profile.html")
+                img_div.style.display = "block";
+
+                //接會員資料
+                document.getElementById("pid").value = data[0].id;
+                document.getElementById("pemail").value = data[0].email;
+                document.getElementById("pname").value = data[0].username;
+                document.getElementById("pphone").value = data[0].phone;
+                document.getElementById("paddress").value = data[0].address;
+                
+            }
+            else{                    
+                //alert(data["errmsg"]);
+                window.location.href='login.html';
+            }
+        }).catch((e) => {
+            console.log(e,"data失敗內容~~~~~~~~~~~")
+        });       
+    // }
+}
+
+//登出
+function signdelete(){
+    let req = new XMLHttpRequest(); 
+    fetch("/api/user",{
+        method:"DELETE",   
+        // body: JSON.stringify(signin_info),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        if(data["error"] == null){
+            //alert("登出成功");
+            
+            let signdelete = document.getElementById("signdelete")
+            let orders = document.getElementById("orders")
+
+            let a_change = document.getElementById("a_change")
+            let img_div = document.querySelector(".img_div")
+            
+            signdelete.style.display = "none";
+            orders.style.display = "none";
+
+            a_change.setAttribute("href","/login.html")
+            img_div.style.display = "none"; 
+            
+            home();
+        }
+        else{                    
+            // alert(data["errmsg"]);
+        }
+    }).catch((e) => {
+        console.log(e,"data失敗內容~~~~~~~~~~~")
+    });
+    
 }
 
 //修改基本資料
@@ -48,6 +136,8 @@ function changepw(){
 
     if(oldpassword == "" || newpassword == ""){
         debugger;
+    }else if(user_password != oldpassword){
+        alert("舊密碼輸入錯誤!")
     }else{
         let info={
             "oldpassword": oldpassword,
@@ -108,88 +198,7 @@ function beforeSubmit(){
     }
 }
 
-//確認登入狀態
-function checkprofile(){
-    let req = new XMLHttpRequest(); 
-    fetch("/api/profile",{
-        method:"GET",   
-        // body: JSON.stringify(signin_info),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then((response)=>{
-        return response.json();
-    }).then((data)=>{
-        if(data["error"] == null){
-            //alert("登入中....");
-            
-            let signdelete = document.getElementById("signdelete")
-            let orders = document.getElementById("orders")
 
-            let a_change = document.getElementById("a_change")
-            let img_div = document.querySelector(".img_div")
-
-            signdelete.style.display = "block";
-            orders.style.display = "block";
-
-            a_change.setAttribute("href","/account_profile.html")
-            img_div.style.display = "block";
-
-            //接會員資料
-            document.getElementById("pid").value = data[0].id;
-            document.getElementById("pemail").value = data[0].email;
-            document.getElementById("pname").value = data[0].username;
-            document.getElementById("pphone").value = data[0].phone;
-            document.getElementById("paddress").value = data[0].address;
-            
-        }
-        else{                    
-            //alert(data["errmsg"]);
-            window.location.href='login.html';
-        }
-    }).catch((e) => {
-        console.log(e,"data失敗內容~~~~~~~~~~~")
-    });
-    
-}
-
-//登出
-function signdelete(){
-    let req = new XMLHttpRequest(); 
-    fetch("/api/user",{
-        method:"DELETE",   
-        // body: JSON.stringify(signin_info),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then((response)=>{
-        return response.json();
-    }).then((data)=>{
-        if(data["error"] == null){
-            //alert("登出成功");
-            
-            let signdelete = document.getElementById("signdelete")
-            let orders = document.getElementById("orders")
-
-            let a_change = document.getElementById("a_change")
-            let img_div = document.querySelector(".img_div")
-            
-            signdelete.style.display = "none";
-            orders.style.display = "none";
-
-            a_change.setAttribute("href","/login.html")
-            img_div.style.display = "none"; 
-            
-            home();
-        }
-        else{                    
-            // alert(data["errmsg"]);
-        }
-    }).catch((e) => {
-        console.log(e,"data失敗內容~~~~~~~~~~~")
-    });
-    
-}
 
 
 //搜尋按鈕

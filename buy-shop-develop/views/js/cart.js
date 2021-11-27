@@ -19,8 +19,8 @@ window.onload = function () {
             // product.outerHTML = "共" + data["data"].length + "項商品";
             //alert("查詢成功");  
             //購物車數量
-            let lblCartCount = document.getElementById("lblCartCount");
-            lblCartCount.innerHTML= data["data"].length;
+            // let lblCartCount = document.getElementById("lblCartCount");
+            // lblCartCount.innerHTML= data["data"].length;
             let total_price = document.getElementById("total_price");
             total_price.innerHTML= data.total;
 
