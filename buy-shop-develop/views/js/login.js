@@ -39,6 +39,7 @@ function register(){
     let password = document.getElementById("sign_password").value;
     let password2 = document.getElementById("sign_password2").value;
     let account_email = document.getElementById('account_email');
+    let account_email_error = document.getElementById('account_email_error');
     let set_password = document.getElementById('set_password');
     let ensure_password = document.getElementById('ensure_password');
     if (email == "" || password=="" || password2=="")
@@ -66,7 +67,7 @@ function register(){
     }
     else
     {
-        if(email.includes("@"))
+        if(email.includes("@") && password == password2)
         {            
             let register_info ={"email":email,"password":password};
             console.log(register_info)
@@ -80,7 +81,9 @@ function register(){
                 return response.json();
             }).then((data)=>{
                 if(data["ok"] == true){
-                    alert("註冊成功！!!!!")                    
+                    alert("註冊成功！")  
+                    //重新導向登入頁面
+                    window.location.reload();                  
                 }
                 else{                    
                     alert(data["errmsg"])
@@ -89,8 +92,9 @@ function register(){
                 console.log(e,"data失敗內容~~~~~~~~~~~")
             });
         }
-        else{            
-            alert("信箱格式錯誤~~")
+        else if(!email.includes("@")){            
+            alert("信箱格式錯誤!")
+            account_email_error.style.display = 'block';
         }
         if(password!=password2){
             alert("新密碼與確認新密碼不一致");
