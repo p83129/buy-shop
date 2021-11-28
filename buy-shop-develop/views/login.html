@@ -31,14 +31,14 @@
         <h2>賣家登入</h2>
         <div class="margin_div">
             <label>賣家帳號</label>
-            <input type="email" placeholder="e-mail" class="member_input">
+            <input id="seller_email" type="email" placeholder="e-mail" class="member_input">
         </div>
         <div class="margin_div">
             <label>賣家密碼</label>
-            <input type="password" class="member_input">
+            <input id="seller_password" type="password" class="member_input">
         </div>
         <div class="forget_pas_div_1">
-            <button class="seller_btn btn_forget_pas" onclick="seller_btn()">登入</button>
+            <button id="seller_login" class="seller_btn btn_forget_pas" onclick="seller_btn()">登入</button>
         </div>
     </div>
     <!-- 目錄--side_bar -->
@@ -205,7 +205,7 @@
                     </a>
                 </div>
             </div>
-            <!-- 會員登入 -->
+            <!-- 會員/賣家登入 -->
             <div id="login">
                 <div class="margin_div">
                     <label>帳號</label>

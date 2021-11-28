@@ -95,6 +95,35 @@ function register(){
     }
 }
 
+//test
+function signin_info(email,password){
+
+    // let email = document.getElementById("signin_email").value;
+    // let password = document.getElementById("signin_password").value;
+    let signin_info ={"email":email,"password":password};
+        console.log(signin_info)
+        fetch("/api/user",{
+            method:"PATCH",   
+            body: JSON.stringify(signin_info),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((response)=>{
+            return response.json();
+        }).then((data)=>{
+            if(data["error"] == null){
+                //alert("登入成功");
+                if(data.auth == "999") window.location.href='/add.html'; 
+                else window.location.href='/'; 
+            }
+            else{                    
+                alert(data["errmsg"]);
+            }
+        }).catch((e) => {
+            console.log(e,"data失敗內容~~~~~~~~~~~")
+        });
+}
+
 // 登入會員
 function signin(){
 
@@ -120,28 +149,29 @@ function signin(){
     }
     else
     {                   
-        let signin_info ={"email":email,"password":password};
-        console.log(signin_info)
-        fetch("/api/user",{
-            method:"PATCH",   
-            body: JSON.stringify(signin_info),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then((response)=>{
-            return response.json();
-        }).then((data)=>{
-            if(data["error"] == null){
-                //alert("登入成功");
-                if(data.auth == "999") window.location.href='/modify.html'; 
-                else window.location.href='/'; 
-            }
-            else{                    
-                alert(data["errmsg"]);
-            }
-        }).catch((e) => {
-            console.log(e,"data失敗內容~~~~~~~~~~~")
-        });
+        signin_info(email,password);
+        // let signin_info ={"email":email,"password":password};
+        // console.log(signin_info)
+        // fetch("/api/user",{
+        //     method:"PATCH",   
+        //     body: JSON.stringify(signin_info),
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     }
+        // }).then((response)=>{
+        //     return response.json();
+        // }).then((data)=>{
+        //     if(data["error"] == null){
+        //         //alert("登入成功");
+        //         if(data.auth == "999") window.location.href='/modify.html'; 
+        //         else window.location.href='/'; 
+        //     }
+        //     else{                    
+        //         alert(data["errmsg"]);
+        //     }
+        // }).catch((e) => {
+        //     console.log(e,"data失敗內容~~~~~~~~~~~")
+        // });
         
         
     }
@@ -179,6 +209,7 @@ function submit(){
 
 //賣家登入小視窗
 function seller_singin(){
+    
     let seller_singin = document.getElementById("seller_singin");
     let hidebg = document.getElementById('hidebg');
 
@@ -195,13 +226,19 @@ function seller_singin(){
 }
 
 function seller_btn(){
+
+    let email = document.getElementById("seller_email").value;
+    let password = document.getElementById("seller_password").value;
     let seller_singin = document.getElementById("seller_singin");
     let hidebg = document.getElementById('hidebg');
+    
     seller_singin.style.display = 'none';
     hidebg.style.display = 'none';
+   
+    signin_info(email,password);
 }
 
-//登入/註冊ENTER鍵
+//登入/註冊/賣家登入ENTER鍵
 document.getElementById("login").addEventListener("keyup",function(event){
     // Make sure the form isn't submitted
     event.preventDefault();
@@ -213,6 +250,12 @@ document.getElementById("register").addEventListener("keyup",function(event){
     event.preventDefault();
     if(event.which === 13) {
         document.getElementById("register_enter").click(); 
+    }
+});
+document.getElementById("seller_singin").addEventListener("keyup",function(event){
+    event.preventDefault();
+    if(event.which === 13) {
+        document.getElementById("seller_login").click(); 
     }
 });
 

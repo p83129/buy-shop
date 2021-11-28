@@ -2,7 +2,7 @@
 function Text1() {
     let a_change = document.getElementById("a_change");
     a_change.classList = '';
-    a_change.innerHTML = 'LOG OUT';
+    a_change.innerHTML = '登出';
 }
 function Text_Image() {
     let a_change = document.getElementById("a_change");
