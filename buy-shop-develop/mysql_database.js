@@ -224,7 +224,8 @@ exports.update_memberpw = function(email, oldpassword, newpassword)
         // console.log("insert_val_2: " + insert_val);
         conn.query(update_sql, function(err, results, fields){
             if (err) 
-            {                 
+            {         
+                console.log("1");        
                 msg={
                     'error': true,
                     'errmsg':err
@@ -233,11 +234,19 @@ exports.update_memberpw = function(email, oldpassword, newpassword)
             }
             else if(results.affectedRows == 1)
             {
+                console.log("results.affectedRows: ", results.affectedRows);
                 console.log("修改密碼成功 ");
                 msg = {
                     "ok":true
                 };                
                 resolve(JSON.stringify(msg))
+            }
+            else{
+                msg = {
+                    "error":true,
+                    "errmsg":"舊密碼輸入錯誤"
+                }; 
+                resolve(JSON.stringify(msg))  
             }
         });
        

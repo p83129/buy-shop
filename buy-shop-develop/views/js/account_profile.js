@@ -8,54 +8,51 @@ let user_password;
 
 //確認登入狀態
 window.onload=function(){
-    // function checkprofile(){
-        let req = new XMLHttpRequest(); 
-        fetch("/api/profile",{
-            method:"GET",   
-            // body: JSON.stringify(signin_info),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then((response)=>{
-            return response.json();
-        }).then((data)=>{
-            if(data["error"] == null){
-                //alert("登入中....");
-                user_password = data[0].password;
 
-                let signdelete = document.getElementById("signdelete");
-                let orders = document.getElementById("orders");
+    fetch("/api/profile",{
+        method:"GET",   
+        // body: JSON.stringify(signin_info),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        if(data["error"] == null){
+            //alert("登入中....");
+            //User密碼
+            user_password = data[0].password;
 
-                let a_change = document.getElementById("a_change");
-                let img_div = document.querySelector(".img_div");
+            let signdelete = document.getElementById("signdelete");
+            let orders = document.getElementById("orders");
+            let a_change = document.getElementById("a_change");
+            let img_div = document.querySelector(".img_div");
 
-                signdelete.style.display = "block";
-                orders.style.display = "block";
+            signdelete.style.display = "block";
+            orders.style.display = "block";
+            a_change.setAttribute("href","/account_profile.html")
+            img_div.style.display = "block";
 
-                a_change.setAttribute("href","/account_profile.html")
-                img_div.style.display = "block";
-
-                //接會員資料
-                document.getElementById("pid").value = data[0].id;
-                document.getElementById("pemail").value = data[0].email;
-                document.getElementById("pname").value = data[0].username;
-                document.getElementById("pphone").value = data[0].phone;
-                document.getElementById("paddress").value = data[0].address;
-                
-            }
-            else{                    
-                //alert(data["errmsg"]);
-                window.location.href='login.html';
-            }
-        }).catch((e) => {
-            console.log(e,"data失敗內容~~~~~~~~~~~")
-        });       
-    // }
+            //接會員資料
+            document.getElementById("pid").value = data[0].id;
+            document.getElementById("pemail").value = data[0].email;
+            document.getElementById("pname").value = data[0].username;
+            document.getElementById("pphone").value = data[0].phone;
+            document.getElementById("paddress").value = data[0].address;
+            
+        }
+        else{                    
+            //alert(data["errmsg"]);
+            window.location.href='login.html';
+        }
+    }).catch((e) => {
+        console.log(e,"data失敗內容~~~~~~~~~~~")
+    });       
 }
 
 //登出
 function signdelete(){
-    let req = new XMLHttpRequest(); 
+
     fetch("/api/user",{
         method:"DELETE",   
         // body: JSON.stringify(signin_info),
@@ -95,22 +92,19 @@ function signdelete(){
 function change(){    
     let pname = document.getElementById("pname").value;
     let pphone = document.getElementById("pphone").value;
-    let paddress = document.getElementById("paddress").value;
-    
-    let info={
+    let paddress = document.getElementById("paddress").value;    
+    let info = {
         "username": pname,
         "address": paddress,
         "phonenum": pphone
     }
-    let req = new XMLHttpRequest();   
+
     fetch("/api/profile", {
         method:"POST",   
         body: JSON.stringify(info),
         headers: {
             "Content-Type": "application/json"
         }
-    // }).then((response)=>{
-    //     return response.json();
     }).then((data)=>{
         if(data["ok"] == true){  
             alert("修改成功");            
@@ -136,26 +130,29 @@ function changepw(){
 
     if(oldpassword == "" || newpassword == ""){
         debugger;
-    }else if(user_password != oldpassword){
-        alert("舊密碼輸入錯誤!")
-    }else{
+    }
+    // }else if(user_password != oldpassword){
+    //     alert("舊密碼輸入錯誤!")
+    // }
+    else{
         let info={
             "oldpassword": oldpassword,
             "newpassword": newpassword
         }
-        let req = new XMLHttpRequest();   
         fetch("/api/profile", {
             method:"PATCH",   
             body: JSON.stringify(info),
             headers: {
                 "Content-Type": "application/json"
-            }
+            } }).then((response)=>{
+                return response.json();
         }).then((data)=>{
             if(data["ok"] == true){  
-                alert("修改密碼成功");            
+                alert("修改密碼成功");  
+                window.location.reload();          
             }       
             else{             
-                alert("修改密碼失敗");
+                alert(data["errmsg"]);
             }
         }).catch((e) => {
             console.log(e,"data失敗內容~~~~~~~~~~~")
@@ -167,13 +164,14 @@ function changepw(){
 
 //表單不為空判斷
 function beforeSubmit(){
-    var old_password = document.getElementById('old_password').value;
-    var error_old_password = document.getElementById('error_old_password'); 
-    var new_password = document.getElementById('new_password').value;
-    var error_new_password = document.getElementById('error_new_password');
-    var ensure_password = document.getElementById('ensure_password').value;
-    var error_ensure_password = document.getElementById('error_ensure_password'); 
-    var different_password = document.getElementById('different_password');
+
+    let old_password = document.getElementById('old_password').value;
+    let error_old_password = document.getElementById('error_old_password'); 
+    let new_password = document.getElementById('new_password').value;
+    let error_new_password = document.getElementById('error_new_password');
+    let ensure_password = document.getElementById('ensure_password').value;
+    let error_ensure_password = document.getElementById('error_ensure_password'); 
+    let different_password = document.getElementById('different_password');
 
     if(old_password=="" || old_password==null){       
         error_old_password.style.display = 'block';

@@ -284,8 +284,8 @@ function updatecart(value, amount){
 
 //移除商品
 function delete_btn(value, type){
-    alert(type);
-    alert(value);
+    // alert(type);
+    // alert(value);
     let info ={"pno":value,
                 "type":type};    
     fetch("/api/cart", {

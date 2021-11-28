@@ -77,8 +77,8 @@ router.patch('/profile', async function(req,res){
         console.log("session: " + session.email);
         
         let profile = await db.update_memberpw(email, oldpassword, newpassword);
-            
-        res.end(JSON.stringify(profile))
+        console.log("proflie~~",profile);
+        res.end(profile)
         
         
     }
