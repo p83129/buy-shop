@@ -95,7 +95,7 @@ function register(){
     }
 }
 
-//test
+//signin_info
 function signin_info(email,password){
 
     // let email = document.getElementById("signin_email").value;
@@ -150,30 +150,7 @@ function signin(){
     else
     {                   
         signin_info(email,password);
-        // let signin_info ={"email":email,"password":password};
-        // console.log(signin_info)
-        // fetch("/api/user",{
-        //     method:"PATCH",   
-        //     body: JSON.stringify(signin_info),
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     }
-        // }).then((response)=>{
-        //     return response.json();
-        // }).then((data)=>{
-        //     if(data["error"] == null){
-        //         //alert("登入成功");
-        //         if(data.auth == "999") window.location.href='/modify.html'; 
-        //         else window.location.href='/'; 
-        //     }
-        //     else{                    
-        //         alert(data["errmsg"]);
-        //     }
-        // }).catch((e) => {
-        //     console.log(e,"data失敗內容~~~~~~~~~~~")
-        // });
-        
-        
+               
     }
 }
 

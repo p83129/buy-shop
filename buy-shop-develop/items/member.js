@@ -99,7 +99,8 @@ router.get('/user', async function(req,res){
                 'ok': true,
                 'email':select_member[0].email,
                 'name':select_member[0].username,
-                'phone':select_member[0].phone
+                'phone':select_member[0].phone,
+                'auth':select_member[0].auth
             };
             res.end(JSON.stringify(msg))
         }

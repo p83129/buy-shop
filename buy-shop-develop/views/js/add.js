@@ -10,6 +10,35 @@ function Text_Image() {
     a_change.innerHTML = '';
 }
 
+//登出
+function signdelete(){
+    let req = new XMLHttpRequest(); 
+    fetch("/api/user",{
+        method:"DELETE",   
+        // body: JSON.stringify(signin_info),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        if(data["error"] == null){
+            //alert("登出成功"); 
+            home();
+        }
+        else{                    
+            // alert(data["errmsg"]);
+        }
+    }).catch((e) => {
+        console.log(e,"data失敗內容~~~~~~~~~~~")
+    });   
+}
+
+//回首頁
+function home(){
+    window.location.href='/'; 
+}
+
 //新增商品
 var add_product = document.querySelector('a[href="#add_product"]');
 var add_product_1 = document.getElementById('add_product_1');
@@ -416,40 +445,6 @@ function addproduct(status) {
         }
         else {
             alert("新增失敗");
-        }
-    }).catch((e) => {
-        console.log(e, "data失敗內容~~~~~~~~~~~")
-    });
-
-}
-
-//回首頁
-function home() {
-    window.location.href = '/';
-}
-
-//登出
-function signdelete() {
-    let req = new XMLHttpRequest();
-    fetch("/api/user", {
-        method: "DELETE",
-        // body: JSON.stringify(signin_info),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then((response) => {
-        return response.json();
-    }).then((data) => {
-        if (data["error"] == null) {
-            //alert("登出成功");
-
-            //回首頁
-            index();
-
-
-        }
-        else {
-            // alert(data["errmsg"]);
         }
     }).catch((e) => {
         console.log(e, "data失敗內容~~~~~~~~~~~")

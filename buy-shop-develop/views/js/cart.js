@@ -57,21 +57,29 @@ function checklogin() {
     }).then((response) => {
         return response.json();
     }).then((data) => {
-        if (data["error"] == null) {
-            //alert("登入中....");
-
-            let signdelete = document.getElementById("signdelete")
-            let orders = document.getElementById("orders")
-
-            let a_change = document.getElementById("a_change")
-            let img_div = document.querySelector(".img_div")
-
+        let signdelete = document.getElementById("signdelete");
+        let orders = document.getElementById("orders");
+        let a_change = document.getElementById("a_change");
+        let img_div = document.querySelector(".img_div");
+        //一般會員登入
+        if(data["error"] == null && data.auth == '1'){
+            //alert("登入中....");            
             signdelete.style.display = "block";
             orders.style.display = "block";
-
-            a_change.setAttribute("href","/account_profile.html")
-            img_div.style.display = "block";
-
+            a_change.setAttribute("href","/account_profile.html");
+            img_div.style.display = "block";   
+            
+        }
+        //賣家登入
+        else if(data.auth == '999'){
+        
+            signdelete.innerText = '賣家登出';
+            orders.innerText = '+新增商品';
+            signdelete.style.display = "block";
+            orders.style.display = "block";
+            orders.setAttribute("onclick","add()");
+            a_change.setAttribute("href","/account_profile.html");
+            img_div.style.display = "block"; 
         }
         else {
             alert(data["errmsg"]);
@@ -327,6 +335,11 @@ document.getElementById("search_word").addEventListener("keyup",function(event){
         document.getElementById("search_btn").click(); 
     }
 });
+
+//+新增商品
+function add(){
+    window.location.href='add.html';
+}
 
 //回首頁
 function home(){
