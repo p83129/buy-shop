@@ -90,10 +90,10 @@ function renew(index) {
     var choose = document.getElementById("choose").value;
     var empty = " ";
 
-    document.getElementById("choose_1").innerHTML = empty;
-    document.getElementById("choose_2").innerHTML = empty;
-    document.getElementById("choose_1").innerHTML = choose;
-    document.getElementById("dot").innerText = '>';
+    document.getElementById("choose_1").innerText = empty;
+    document.getElementById("choose_2").innerText = empty;
+    document.getElementById("choose_1").innerText = choose;
+    // document.getElementById("dot").innerText = '>';
 
 }
 // root

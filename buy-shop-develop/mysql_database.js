@@ -1033,7 +1033,8 @@ const S3 = require('aws-sdk/clients/s3')
 
 const bucketName = 's3mytestbucket2021';
 const region = 'ap-northeast-1';
-const accessKeyId = 'AKIA4Y23VAHZ32B7QG5O';
+// const accessKeyId = 'AKIA4Y23VAHZ32B7QG5O';
+const accessKeyId = 'AKIA4Y23VAHZ4L22HG7I';
 const secretAccessKey = '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';
 
 const s3 = new S3({
@@ -1045,7 +1046,7 @@ const s3 = new S3({
 // uploads a file to s3
 exports.upload = function(file){
     return new Promise(function (resolve, reject) {
-
+        console.log("S3_file: ", file);
         const fileStream = fs.createReadStream(file.path)
 
         const uploadParams = {
@@ -1057,6 +1058,7 @@ exports.upload = function(file){
         let msg = {
             'ok':true
         };
+        console.log("S3 msg~~~~~~~~~~~~~~~`", msg);
         resolve(JSON.stringify(msg))
     });
 }

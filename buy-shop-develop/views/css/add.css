@@ -159,11 +159,12 @@ option:active{
     margin: -20px 0px 0px 100px;
 }
 .choose_2{
-    margin: -21px 0px 0px 170px;
+    margin: -20px 0px 0px 182px;
 }
 .choose_color{
     color: #fa8072;
     font-weight: bold;
+    position: absolute;
 }
 /* 基本資訊 */
 .h2_info{

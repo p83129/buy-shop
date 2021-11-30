@@ -89,7 +89,8 @@ router.post('/upproduct', any, async function(req, res){
 
             for(i=0 ; i < file.length ; i++ ){ 
                 console.log("開始跑S3");        
-                let aa = await db.upload(file[i]);      
+                let aa = await db.upload(file[i]);  
+                console.log("S3 回傳值:", aa);
                 console.log("上傳成功");                
             }     
 
