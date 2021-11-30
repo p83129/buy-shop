@@ -469,53 +469,60 @@ function getcomment(){
 function comment_content(data){
 
     let table_content = document.getElementById("table_content");
-    for(let n = 0 ; n < data.length ; n++){
-        let tr = document.createElement('tr');
-        let td_menber = document.createElement('td');
-        let td_message = document.createElement('td');
-        //星星
-        let td_star = document.createElement('td');
-        let div = document.createElement('div');
-        let count = data[n].star;
+    if(data.length != undefined){
+        for(let n = 0 ; n < data.length ; n++){
+            let tr = document.createElement('tr');
+            let td_menber = document.createElement('td');
+            let td_message = document.createElement('td');
+            //星星
+            let td_star = document.createElement('td');
+            let div = document.createElement('div');
+            let count = data[n].star;
 
-        imageObj = new Image();
-        images = new Array();
-        for(let i=0 ; i<5 ; i++){
-            if(i<count){ 
-                images[i]="image/shiny.png";
-            }else{
-                images[i] = "image/star.png";
+            imageObj = new Image();
+            images = new Array();
+            for(let i=0 ; i<5 ; i++){
+                if(i<count){ 
+                    images[i]="image/shiny.png";
+                }else{
+                    images[i] = "image/star.png";
+                }
             }
-        }
 
-        div.setAttribute("id" , "stars");
-        div.className = 'left';
-        
-        for(let j=0 ; j<5 ; j++){
-            // let imageObj = new Image();
-            imageObj.src = images[j];
-            let img = document.createElement('img');
-            img.className = 'star_width';
-            img.setAttribute("id" ,j+1);
+            div.setAttribute("id" , "stars");
+            div.className = 'left';
             
-            img.setAttribute('src',imageObj.src);
-            div.appendChild(img);
+            for(let j=0 ; j<5 ; j++){
+                // let imageObj = new Image();
+                imageObj.src = images[j];
+                let img = document.createElement('img');
+                img.className = 'star_width';
+                img.setAttribute("id" ,j+1);
+                
+                img.setAttribute('src',imageObj.src);
+                div.appendChild(img);
+            }
+
+            td_menber.innerText = data[n].email;
+            td_message.innerText = data[n].comment;
+
+            td_menber.className = 'border_style txt_thin';
+            td_message.className = 'border_style txt_thin';
+            td_star.className = 'border_style txt_thin';
+
+            tr.appendChild(td_menber);
+            tr.appendChild(td_message);
+            td_star.appendChild(div);
+            tr.appendChild(td_star);
+            table_content.appendChild(tr);
         }
+    }else{
+        let div_btn_message = document.getElementById("div_btn_message");
+        let no_comment = document.createElement('p');
+        no_comment.innerText = '無相關評論';
 
-        td_menber.innerText = data[n].email;
-        td_message.innerText = data[n].comment;
-
-        td_menber.className = 'border_style txt_thin';
-        td_message.className = 'border_style txt_thin';
-        td_star.className = 'border_style txt_thin';
-
-        tr.appendChild(td_menber);
-        tr.appendChild(td_message);
-        td_star.appendChild(div);
-        tr.appendChild(td_star);
-        table_content.appendChild(tr);
+        div_btn_message.appendChild(no_comment);
     }
-
 }
 
 //登出
