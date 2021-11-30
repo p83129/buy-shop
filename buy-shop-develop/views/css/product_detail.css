@@ -46,6 +46,9 @@
     margin-right: 50px;
     border-radius: 5px;
 }
+#pname{
+    width:900px;
+}
 .product_contect{
     height: 400px;
     /* line-height: 35px; */
