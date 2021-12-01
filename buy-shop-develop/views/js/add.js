@@ -93,13 +93,13 @@ function renew(index) {
     document.getElementById("choose_1").innerText = empty;
     document.getElementById("choose_2").innerText = empty;
     document.getElementById("choose_1").innerText = choose;
-    // document.getElementById("dot").innerText = '>';
 
 }
 // root
-function renew1() {
+function choose_type() {
     var root = document.getElementById("root").value;
-    document.getElementById("choose_2").innerHTML = root;
+    document.getElementById("dot").innerText = '>';
+    document.getElementById("choose_2").innerText = root;
 }
 
 // 限制字數

@@ -258,8 +258,8 @@ exports.insert_product = function(choose_1, choose_2, proot, pbranch, product_na
 {
     return new Promise(function(resolve,reject)
     {
-        // console.log("choose_1", choose_1);
-        // console.log("choose_2", choose_2);
+        console.log("choose_1", choose_1);
+        console.log("choose_2", choose_2);
         // console.log("proot", proot);
         // console.log("pbranch", pbranch);
         // console.log("product_name", product_name);
@@ -274,9 +274,9 @@ exports.insert_product = function(choose_1, choose_2, proot, pbranch, product_na
         let pno = "";
         let msg = "";        
         let select_sql= "select pno from product where proot = '" + choose_1 + "' and pbranch = '" + choose_2 + "' ORDER BY updatetime DESC LIMIT 0,1";
-        // console.log(select_sql);
+        console.log(select_sql);
         conn.query(select_sql, function(err, results, fields)
-        {   
+        {   console.log("select_all", results);
             // console.log("查詢後");
             if (err) 
             {
@@ -287,6 +287,7 @@ exports.insert_product = function(choose_1, choose_2, proot, pbranch, product_na
                 if (results.length == 1) {
                     //取出pno+1
                     pno = String(Number(results[0].pno)+1);
+                    
                     console.log("pno",pno);
                     let insert_sql = "insert into product(pno, proot, pbranch, ptype, pname, pstatus, pcontent, pmaterial, pweight, parea, pprice, pcount) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     let insert_val = [pno, choose_1, choose_2, contents, product_name, status, text_amount, '', weight, area, price, num];
@@ -1034,8 +1035,8 @@ const S3 = require('aws-sdk/clients/s3')
 const bucketName = 's3mytestbucket2021';
 const region = 'ap-northeast-1';
 // const accessKeyId = 'AKIA4Y23VAHZ32B7QG5O';
-const accessKeyId = 'AKIA4Y23VAHZ4L22HG7I';
-const secretAccessKey = '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';
+const accessKeyId = 'AKIA4Y23VAHZVEDNTVUV';
+const secretAccessKey = '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';
 
 const s3 = new S3({
   region,

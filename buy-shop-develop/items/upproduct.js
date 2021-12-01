@@ -50,14 +50,14 @@ router.post('/upproduct', any, async function(req, res){
         else if(choose_2.includes("蛋奶素")) pbranch = 2001;
         else if(choose_2.includes("植物五辛素")) pbranch = 3001;
         
-
-        //console.log("product_name", product_name);  
+        
+        console.log("product_name", product_name);  
              
         //insert product to db
         // console.log("choose_1", choose_1);
         // console.log("choose_2", choose_2);
-        // console.log("proot", proot);
-        // console.log("pbranch", pbranch);
+        console.log("proot", proot);
+        console.log("pbranch", pbranch);
         // console.log("product_name", product_name);
         // console.log("text_amount", text_amount);
         // console.log("contents", contents);
