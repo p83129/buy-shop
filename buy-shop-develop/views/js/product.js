@@ -64,7 +64,7 @@ function call(id){
 
             proot.setAttribute("onclick","searchtext_btn()");
             proot.innerHTML = "搜尋";
-            pbranch.innerHTML = decodeURI(location_href[1].substring(8));
+            pbranch.innerHTML = decodeURI(location_href[3].substring(8));
             product.innerHTML = "查無相關商品...";
         }
     }).catch((e) => {
@@ -192,11 +192,11 @@ function products(data){
 
     //判斷純文字
     let reg = /^[\u4E00-\u9FA5]+$/ ;
-    if (reg.test(decodeURI(location_href[1].substring(8)))) {
+    if (reg.test(decodeURI(location_href[3].substring(8)))) {
         proot.setAttribute("onclick","searchtext_btn()");
         proot.innerHTML = "搜尋";
-        if(id.length == 3) pbranch.innerHTML = decodeURI(location_href[1].substring(8));
-        else pbranch.innerHTML = decodeURI(location_href[1].substring(8));
+        if(id.length == 3) pbranch.innerHTML = decodeURI(location_href[3].substring(8));
+        else pbranch.innerHTML = decodeURI(location_href[3].substring(8));
 	
     }else{
         proot.innerHTML = data['proot'];
