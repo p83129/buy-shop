@@ -26,8 +26,8 @@ exports.insert_rds = function(pno, img)
         console.log("pno", pno);
         val.push(pno);
         console.log("val", val);
-        let insert_sql = "insert into product_imgtest(pno";
-        // let insert_sql = "insert into product_img(pno";
+        // let insert_sql = "insert into product_imgtest(pno";
+        let insert_sql = "insert into product_img(pno";
         for(i= 0; i<img.length; i++){
             image += ",img"+ (i+1);
             q += ",?";
@@ -66,8 +66,8 @@ exports.select_rds_img1 = function(id)
     console.log("指撈出第一張圖",id);
     return new Promise(function(resolve,reject)
     {
-        let select_sql= "select pno, img1 from product_imgtest where pno like '" + id + "%'";
-        // let select_sql= "select pno, img1 from product_img where pno like '" + id + "%'";
+        // let select_sql= "select pno, img1 from product_imgtest where pno like '" + id + "%'";
+        let select_sql= "select pno, img1 from product_img where pno like '" + id + "%'";
         console.log(select_sql);
         conn.query(select_sql, function(err, results, fields)
         {   
@@ -89,8 +89,8 @@ exports.select_rds_imgall = function(id)
 {
     return new Promise(function(resolve,reject)
     {
-        let select_sql= "select pno, img1, img2, img3, img4, img5, img6 from product_imgtest where pno = '" + id + "'";
-        // let select_sql= "select pno, img1, img2, img3, img4, img5, img6 from product_img where pno = '" + id + "'";
+        // let select_sql= "select pno, img1, img2, img3, img4, img5, img6 from product_imgtest where pno = '" + id + "'";
+        let select_sql= "select pno, img1, img2, img3, img4, img5, img6 from product_img where pno = '" + id + "'";
         console.log(select_sql);
         conn.query(select_sql, function(err, results, fields)
         {   
