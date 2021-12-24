@@ -7,10 +7,10 @@ const upload = multer({ dest: 'uploads/' })
 
 const mysql = require("mysql2");
 var conn = mysql.createPool({
-    host: 'database-rds.cadwklykzixp.ap-northeast-1.rds.amazonaws.com',
+    host: 'aws-rdstest.cadwklykzixp.ap-northeast-1.rds.amazonaws.com',
     user: 'admin',
     password: 'qaz4545112',
-    database:'RDSTest'
+    database:'rdsdb'
 });
 const s3_http = 'https://d3ctywf3vouc7n.cloudfront.net/';
 

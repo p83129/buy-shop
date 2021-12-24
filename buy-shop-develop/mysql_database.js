@@ -1035,8 +1035,11 @@ const S3 = require('aws-sdk/clients/s3')
 const bucketName = 's3mytestbucket2021';
 const region = 'ap-northeast-1';
 // const accessKeyId = 'AKIA4Y23VAHZ32B7QG5O';
-const accessKeyId = 'AKIA4Y23VAHZVEDNTVUV';
-const secretAccessKey = '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';
+// const accessKeyId = 'AKIA4Y23VAHZVEDNTVUV';
+const accessKeyId = 'AKIA4Y23VAHZTWCG3SAD';
+
+// const secretAccessKey = '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';
+const secretAccessKey = 'Zf1I6KR3iKbo+8jVE+CgTRSMP03bq2RN1hyClCoM';
 
 const s3 = new S3({
   region,
