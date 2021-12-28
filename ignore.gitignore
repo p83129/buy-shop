@@ -1,3 +1,11 @@
+# ignore.gitignore
+
+# 忽略 mysql_database 檔案
+mysql_database.js
+
+# 忽略 /buy-shop-develop 目錄下的 mysql_database.js 檔案
+buy-shop-develop/mysql_database.js
+
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
