@@ -1,7 +1,4 @@
-# ignore.gitignore
-
-# 忽略 mysql_database 檔案
-mysql_database.js
+# mysql_database.gitignore
 
 # 忽略 /buy-shop-develop 目錄下的 mysql_database.js 檔案
 buy-shop-develop/mysql_database.js
